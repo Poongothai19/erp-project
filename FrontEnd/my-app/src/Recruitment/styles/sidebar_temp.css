@@ -1,0 +1,74 @@
+.sidebar-container1 {
+  width: 200px;
+  position: relative; /* Allows movement without affecting other elements */
+  left: -8px; /* Move it to the left without shrinking */
+  border-radius: 10px;
+  background: white;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+  /* border-right: 1px solid #ddd; */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-right:15px ;
+
+  
+  .search-bar {
+    margin-bottom: 15px;
+  }
+  .sidebar-h3{
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  .search-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #087465;
+    border-radius: 5px;
+  }
+  
+  .menu {
+    margin-top: 10px;
+  }
+  
+  .menu-section {
+    margin-bottom: 10px;
+  }
+  
+  .menu-title {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .menu-title svg {
+    margin-right: 8px;
+  }
+  
+  .menu-title:hover {
+    background: #f5f5f5;
+  }
+  
+  .sub-menu {
+    padding-left: 20px;
+  }
+  
+  .sub-menu-item {
+    padding: 5px;
+    font-size: 13px;
+    color: #076358;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .sub-menu-item:hover {
+    background: #e8f0ff;
+  }
+}

@@ -1,0 +1,356 @@
+.page-container {
+    display: flex;  /* Enables side-by-side layout */
+    height: 100vh;  /* Full height */
+    padding: 20px;  /* Proper spacing */
+    overflow: hidden; /* Prevents any horizontal scrolling */
+    /* position: relative; */
+    left: -20px; /* Moves the container left */
+    max-width: 100%;
+    /* Main Content */
+    
+    .main-content {
+      flex-grow: 1;
+      margin-left:-15px; /* Adjust as needed */
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+      overflow: auto;
+    }
+    
+    /* Navbar */
+    .navbar {
+      display: flex;
+      gap: 30px;
+      font-size: 18px;
+      font-weight: bold;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #087465;
+    }
+    
+    .navbar .active ,.job-link{
+      color: #087465;
+    }
+    
+    /* Headings */
+    h2 {
+      margin-top: 15px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    
+    /* Controls Section */
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+      align-items: center;
+    }
+    .left-controls {
+      display: flex;
+      justify-content: flex-start;
+      gap: 20px;
+      align-items: center;
+    }
+    .right-controls {
+      display: flex;
+      justify-content: flex-end;
+
+      gap: 20px;
+      align-items: center;
+    }
+    
+    .search-box {
+      padding: 10px;
+      width: 150px;
+      height: auto;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      background: #f1f1f1;
+      transition: 0.3s;
+    }
+    
+    .search-box:focus {
+      border-color: #087465;
+      background: #fff;
+    }
+    
+    .primary-btn, .secondary-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    
+    
+    .primary-btn {
+      background: linear-gradient(180deg, #019d88, #0d2e26);
+      color: white;
+/*       margin-left: 500px;
+      margin-right: 20px;
+      width: 150px;
+      height: fit-content; */
+      
+    
+    }
+    
+    .secondary-btn {
+      /* background: #087465; */
+      color: #333;
+    /*    width: 170px;
+      height: fit-content; */
+    }
+    
+    .primary-btn:hover {
+      background: linear-gradient(180deg,  #087465, #087465);
+    }
+    
+    /* Table Styling */
+     .jobtemp-table {
+      width: 100%;
+      text-align:center;
+      background: linear-gradient(180deg, #019d88, #0d2e26);
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: white;
+  
+  }
+    .jobtemp-table th:nth-child(1) {
+    border-radius: 6px 0 0 0;
+  } 
+  .jobtemp-table th:nth-child(6) {
+    border-radius:  0 6px 0 0;
+  } 
+    .jobtemp-table tr:nth-child(1) {
+    border-radius: 6px 0 0 0;
+  } 
+  .jobtemp-table tr:nth-child(6) {
+    border-radius:  0 6px 0 0;
+  } 
+  .jobtemp-table th,
+  .jobtemp-table td {
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .jobtemp-table th{
+    /* border: #019d88 1px solid;   */
+      background: linear-gradient(180deg, #019d88, #0d2e26);
+      color: white;
+      font-weight: bold;
+      text-align: center;
+  }
+  
+  .jobtemp-table tbody tr:nth-child(even) {
+      background: #f9f9f9;
+  }
+  
+  .action-menu {
+    display: inline-block;
+    margin-left: 10px; 
+    visibility: hidden; 
+  }
+  
+  .job-table tbody tr:hover .action-menu {
+    visibility: visible; 
+  } 
+  
+  .action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .edit-option {
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 20px;
+    top: 0;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+  }
+  
+    /* Create Folder Styles */
+    .create-folder {
+      flex-grow: 1;
+      padding: 20px;
+      background: white;
+    }
+    
+    .folder-input {
+      width: 20%;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      background: #f1f1f1;
+    }
+    
+    .folder-input:focus {
+      border-color: #087465;;
+      background: white;
+    }
+    
+    /* Buttons in Folder Section */
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+    }
+    
+    .cancel-btn, .save-btn {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    
+    .cancel-btn {
+      background-color: #ccc;
+    }
+    
+    .save-btn {
+      background-color:  #087465;
+      color: white;
+    }
+    
+    .save-btn:hover {
+      background-color:  #087465;
+    }
+    
+    /* Pagination */
+.pagination {
+  display: flex;
+  gap: 5px;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.pagination .active {
+  background: linear-gradient(180deg, #019d88, #0d2e26);
+  color: white;
+}
+
+.pagination button:hover {
+  background-color: #f1f1f1;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .page-container {
+          flex-direction: column;
+      }
+    
+      .sidebar {
+          width: 100%;
+          height: auto;
+          margin-bottom: 20px;
+      }
+    
+      .main-content {
+          margin-left: 0;
+          width: 100%;
+      }
+    
+      .controls {
+          flex-direction: column;
+          gap: 10px;
+      }
+    
+      .search-box {
+          width: 100%;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .navbar {
+          flex-direction: column;
+          gap: 10px;
+      }
+    
+      .job-table th, .job-table td {
+          font-size: 12px;
+          padding: 8px;
+      }
+    
+      .job-table {
+          display: block;
+          overflow-x: auto;
+      }
+    
+      .buttons {
+          flex-direction:column;
+         }
+    }
+  
+  .records-label {
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .records-dropdown {
+    margin-left: 5px;
+    padding: 5px;
+    font-size: 14px;
+  }
+  .temp-records-dropdown-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .temp-dropdown-selected {
+    background-color: #f0f0f0;
+    padding: 8px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 20px;
+  }
+  
+  .temp-dropdown-menu {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 5px;
+    width: 180px;
+    z-index: 10;
+  }
+  
+  .temp-dropdown-item {
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .temp-dropdown-item:hover {
+    background-color: #e0e0e0;
+  }
+}

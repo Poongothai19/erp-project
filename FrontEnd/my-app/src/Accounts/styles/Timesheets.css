@@ -1,0 +1,350 @@
+/* Timesheets.css - Updated Version */
+
+.timesheets-container {
+  padding: 12px;
+  background: #f5f7fa;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Header Section */
+.timesheets-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.timesheets-header-content h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 4px 0;
+}
+
+.timesheets-header-content p {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.timesheet-punch-wrapper {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  margin-top: -5px;
+}
+
+@media (max-width: 1024px) {
+  .timesheet-punch-wrapper {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+
+/* Employee Info Card */
+.timesheets-employee-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+   background: linear-gradient(180deg, #019d88, #0d2e26);
+  padding: 10px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3);
+  color: white;
+  min-width: 300px;
+}
+
+.timesheets-employee-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  flex-shrink: 0;
+}
+
+.timesheets-employee-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: white;
+}
+
+.timesheets-employee-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.employee-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.timesheets-employee-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.meta-badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.meta-id {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Loading State */
+.timesheets-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 20px;
+}
+
+.timesheets-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f4f6;
+  border-top: 4px solid #17a2b8;
+  border-radius: 50%;
+  animation: timesheets-spin 1s linear infinite;
+}
+
+@keyframes timesheets-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.timesheets-loading p {
+  font-size: 16px;
+  color: #6b7280;
+}
+
+/* Error State */
+.timesheets-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 16px;
+  text-align: center;
+}
+
+.timesheets-error h3 {
+  font-size: 24px;
+  color: #1f2937;
+  margin: 0;
+}
+
+.timesheets-error p {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.timesheets-retry-btn {
+  margin-top: 16px;
+  padding: 12px 24px;
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.timesheets-retry-btn:hover {
+  background-color: #138496;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3);
+}
+
+/* Tabs Navigation */
+.timesheet-tabs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.tab-button:hover:not(:disabled) {
+  border-color: #17a2b8;
+  box-shadow: 0 4px 12px rgba(23, 162, 184, 0.2);
+  transform: translateY(-2px);
+}
+
+.tab-button.active {
+   background: linear-gradient(180deg, #019d88, #0d2e26);
+  border-color: #17a2b8;
+  color: white;
+  box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3);
+}
+
+.tab-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tab-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(23, 162, 184, 0.1);
+  flex-shrink: 0;
+}
+
+.tab-button.active .tab-icon {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.tab-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tab-label {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.tab-description {
+  font-size: 13px;
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+/* Tab Content */
+.tab-content {
+  background: white;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  animation: timesheets-fade-in 0.3s ease-in;
+}
+
+@keyframes timesheets-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .timesheets-header {
+    flex-direction: column;
+  }
+
+  .timesheets-employee-card {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .timesheets-container {
+    padding: 16px;
+  }
+
+  .timesheets-header-content h1 {
+    font-size: 24px;
+  }
+
+  .timesheets-header-content p {
+    font-size: 14px;
+  }
+
+  .timesheet-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .tab-content {
+    padding: 16px;
+  }
+
+  .timesheets-employee-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .timesheets-employee-details {
+    align-items: center;
+  }
+
+  .timesheets-employee-meta {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .timesheets-container {
+    padding: 12px;
+  }
+
+  .tab-button {
+    padding: 16px;
+  }
+
+  .tab-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .tab-label {
+    font-size: 14px;
+  }
+
+  .tab-description {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.share-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999; /* Highest priority */
+  backdrop-filter: blur(2px);
+  font-family: 'Inter', sans-serif;
+}
+
+.share-modal-container {
+  background: white;
+  width: 90%;
+  max-width: 1200px;
+  height: 90vh;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.share-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.share-modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.share-modal-close {
+  background: #f3f4f6;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.share-modal-close:hover {
+  background: #e5e7eb;
+  color: #1f2937;
+}
+
+.share-modal-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.share-modal-left,
+.share-modal-right {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.share-modal-left {
+  border-right: 1px solid #e5e7eb;
+  padding-right: 32px;
+}
+
+.share-modal-right {
+  padding-left: 32px;
+}
+
+/* Form Groups */
+.share-form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.share-label {
+  display: block;
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 4px;
+  background: #fff;
+  padding: 0 4px;
+  position: absolute;
+  top: -8px;
+  left: 8px;
+  z-index: 10;
+}
+
+.share-input-outline {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #111827;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.share-input-outline:focus {
+  border-color: #3b82f6;
+}
+
+.share-select-outline {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #111827;
+  outline: none;
+  background-color: white;
+  appearance: none;
+}
+
+/* Specifically for CC pills */
+.share-cc-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #3b82f6;
+  border-radius: 4px;
+  padding: 6px 12px;
+  min-height: 42px;
+}
+
+.share-cc-pill {
+  background: #3b82f6;
+  color: white;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.share-cc-close {
+  cursor: pointer;
+  display: inline-flex;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.share-cc-input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  min-width: 50px;
+}
+
+/* Checkboxes section */
+.share-columns-section {
+  margin-top: 30px;
+}
+
+.share-section-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 8px;
+}
+
+.share-search-bar {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  border-radius: 4px 4px 0 0;
+  font-size: 13px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.share-columns-list {
+  border: 1px solid #e5e7eb;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.share-checkbox-row {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.share-checkbox-row:last-child {
+  border-bottom: none;
+}
+
+.share-checkbox-row input {
+  margin-right: 12px;
+  accent-color: #229C8B;
+}
+
+.share-checkbox-label {
+  font-size: 13px;
+  color: #4b5563;
+  cursor: pointer;
+}
+
+/* Mail Content Editor */
+.share-editor-container {
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+
+.share-editor-toolbar {
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.share-toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-right: 1px solid #d1d5db;
+  padding-right: 8px;
+}
+
+.share-toolbar-group:last-child {
+  border-right: none;
+}
+
+.share-toolbar-btn {
+  background: none;
+  border: none;
+  color: #4b5563;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-toolbar-btn:hover {
+  background: #e5e7eb;
+}
+
+.share-editor-textarea {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #111827;
+  resize: none;
+  line-height: 1.6;
+}
+
+/* Drag and drop */
+.share-attachment-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #4b5563;
+  margin-top: 30px;
+  margin-bottom: 4px;
+}
+
+.share-attachment-subtitle {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+.share-drag-drop {
+  border: 2px dashed #e5e7eb;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  background: #fafafa;
+  margin-bottom: 20px;
+}
+
+.share-drag-drop p {
+  margin: 0;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.share-drag-drop span {
+  color: #3b82f6;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.share-profile-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #4b5563;
+  margin-bottom: 40px;
+}
+
+/* Footer Actions */
+.share-modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.share-btn-cancel {
+  background: none;
+  border: none;
+  color: #4b5563;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 24px;
+}
+
+.share-btn-cancel:hover {
+  color: #111827;
+}
+
+.share-btn-submit {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 32px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.share-btn-submit:hover {
+  background: #2563eb;
+}

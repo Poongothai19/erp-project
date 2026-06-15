@@ -1,0 +1,722 @@
+/* Vendor Management Specific Styles */
+.vendor-management-page {
+  padding: 20px;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.vendor-management-header {
+  margin-bottom: 20px;
+}
+
+.vendor-management-header h1 {
+  color: #333;
+  margin: 0;
+  font-size: 1.8rem;
+}
+.vendor-management-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+ 
+  min-height:150px ;
+}
+.vendor-stat-card {
+  background: white;
+  padding: 20px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-left: 6px solid;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.vendor-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.vendor-stat-card h3 {
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.vendor-stat-card p {
+  margin: 5px 0 0 0;
+  color: #666;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.vendor-stat-card.total-vendors {
+  border-left-color: #009688;
+}
+
+.vendor-stat-card.total-vendors h3 {
+  color: #009688;
+}
+
+.vendor-stat-card.active-vendors {
+  border-left-color: #009688;
+}
+
+.vendor-stat-card.active-vendors h3 {
+  color: #009688;
+}
+
+.vendor-stat-card.inactive-vendors {
+  border-left-color: #009688;
+}
+
+.vendor-stat-card.inactive-vendors h3 {
+  color: #009688;
+}
+
+.vendor-management-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.vendor-search-box input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 300px;
+  font-size: 14px;
+}
+
+
+
+.vendor-add-btn {
+  background: #009688;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+
+.vendor-action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.vendor-global-action-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.vendor-global-action-btn:hover {
+  background: #218838;
+}
+
+.vendor-table-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.vendor-data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.vendor-data-table th,
+.vendor-data-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.vendor-data-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+  position: sticky;
+  top: 0;
+}
+
+.vendor-status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.vendor-status-badge.active {
+  background: #d4edda;
+  color: #155724;
+}
+
+.vendor-status-badge.inactive {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.vendor-actions-container {
+  position: relative;
+  display: inline-block;
+}
+
+.vendor-actions-dots {
+  background: none;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 5px 10px;
+  color: #666;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.vendor-actions-dots:hover {
+  background: #f8f9fa;
+}
+
+.vendor-actions-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  min-width: 150px;
+}
+
+.vendor-actions-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.vendor-actions-dropdown button:hover {
+  background: #f8f9fa;
+}
+
+/* Vendor Modal Styles */
+.vendor-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.vendor-modal-content {
+  background: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.vendor-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  background: #f8f9fa;
+  border-radius: 8px 8px 0 0;
+}
+
+.vendor-modal-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.vendor-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.vendor-modal-close:hover {
+  background: #e9ecef;
+}
+
+.vendor-modal-body {
+  padding: 20px;
+}
+
+.vendor-form-group {
+  margin-bottom: 20px;
+}
+
+.vendor-form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+}
+
+.vendor-form-group input,
+.vendor-form-group select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.vendor-form-group input:focus,
+.vendor-form-group select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+.vendor-form-group small {
+  color: #666;
+  font-size: 0.8rem;
+  display: block;
+  margin-top: 5px;
+}
+
+.vendor-contact-persons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vendor-add-contact-btn {
+  background: none;
+  border: 1px dashed #ddd;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #007bff;
+  transition: all 0.3s;
+}
+
+.vendor-add-contact-btn:hover {
+  background: #f8f9fa;
+  border-color: #007bff;
+}
+
+.vendor-modal-footer {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  background: #f8f9fa;
+  border-radius: 0 0 8px 8px;
+}
+
+.vendor-cancel-btn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.vendor-create-btn {
+  background: #009688;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.vendor-cancel-btn:hover {
+  background: #545b62;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .vendor-management-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .vendor-management-controls {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .vendor-search-box input {
+    width: 100%;
+  }
+  
+  .vendor-action-buttons {
+    flex-wrap: wrap;
+  }
+  
+  .vendor-data-table {
+    font-size: 0.9rem;
+  }
+  
+  .vendor-data-table th,
+  .vendor-data-table td {
+    padding: 8px;
+  }
+}
+
+
+/* Add these styles to your existing VendorManagement.css */
+
+.vendor-action-buttons-popup {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.vendor-popup-action-btn {
+  background: #009688;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.vendor-popup-action-btn:hover {
+  background: #009688;
+}
+
+.vendor-popup-content h3 {
+  color: #333;
+  margin-bottom: 20px;
+  /* border-bottom: 2px solid #009688; */
+  padding-bottom: 10px;
+}
+
+.vendor-form-group textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.vendor-form-group textarea:focus {
+  outline: none;
+  border-color: #009688;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+.vendor-back-btn {
+  background: #009688;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  margin-right: auto;
+}
+
+.vendor-back-btn:hover {
+  background: #138496;
+}
+
+
+
+/* Add these styles to your existing CSS */
+
+.vendor-actions-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vendor-action-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vendor-action-icon.view {
+  color: #009688;
+}
+
+.vendor-action-icon.edit {
+  color: #009688;
+}
+
+.vendor-action-icon.delete {
+  color: #dc3545;
+}
+
+.vendor-action-icon:hover {
+  background: #f8f9fa;
+}
+
+.vendor-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.detail-row strong {
+  color: #333;
+  min-width: 120px;
+}
+
+.vendor-details h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #007bff;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+
+/* Add this to your VendorManagement.css file */
+
+.add-contact-btn {
+  background-color: #009688;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+  margin-left: 62%;
+}
+
+.add-contact-btn:hover {
+  background-color: #009688;
+}
+
+.remove-contact-btn {
+  background-color: #009688;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+
+.hr-contact-group,
+.onboarding-contact-group,
+.accounts-contact-group {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.company-name-link {
+  background: none;
+  border: none;
+  color: #009688;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+}
+
+.company-name-link:hover {
+  color: #009688;
+}
+
+.vendor-action-buttons-popup {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.vendor-popup-action-btn {
+  background-color: #009688;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.vendor-popup-action-btn:hover {
+  background-color: #009688;
+}
+
+.detail-section {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+.detail-section h4 {
+  margin-bottom: 15px;
+  color: #333;
+  border-bottom: 2px solid #009688;
+  padding-bottom: 5px;
+}
+
+/* Loading States */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error States */
+.error-container {
+  text-align: center;
+  padding: 50px;
+  color: #d32f2f;
+}
+
+/* No Data State */
+.no-data {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Disabled States */
+.vendor-action-icon:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Form Validation */
+.vendor-form-group input:invalid,
+.vendor-form-group textarea:invalid {
+  border-color: #d32f2f;
+}
+
+.vendor-form-group input:focus:invalid,
+.vendor-form-group textarea:focus:invalid {
+  border-color: #d32f2f;
+  box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.2);
+}
+
+
+.page-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  gap: 15px;
+}
+
+.loader-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #1a6f66ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.page-loader p {
+  color: #1a6f66ff;
+  font-size: 16px;
+}

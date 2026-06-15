@@ -1,0 +1,225 @@
+/* Wrapper to avoid affecting other styles */
+.client-form-wrapper {
+  font-family: 'Quattrocento Sans', sans-serif;
+  background: var(--jobopening-background-light);
+  min-height: 100vh;
+  width: 100%;
+  padding: 10px;
+}
+
+/* Form Page */
+.client-form-wrapper .client-form-create-client-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Form Container */
+.client-form-wrapper .client-form-client-form-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 1200px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Header */
+.client-form-wrapper .client-form-client-form-container h1 {
+  text-align:left;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #087465;
+}
+
+/* Section Styling */
+.client-form-wrapper section {
+  margin-bottom: 20px;
+}
+
+.client-form-wrapper section h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+  border-bottom: 2px solid#01533e;
+outline: none;
+  padding-bottom: 5px;
+}
+
+/* Form Grid - 2 Columns */
+.client-form-wrapper .client-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+}
+
+/* Single Column for Small Screens */
+@media (max-width: 768px) {
+  .client-form-wrapper .client-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Form Group */
+.client-form-wrapper .client-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.client-form-wrapper label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 7px;
+  margin-top:14px;
+  color: #555;
+}
+
+/* client-required Asterisk */
+.client-form-wrapper .client-required {
+  color: red;
+}
+
+/* Input Fields */
+.client-form-wrapper input,
+.client-form-wrapper select {
+  padding: 10px;
+  border: 1px solid var(--jobopening-primary-color);
+  border-radius: 5px;
+  height: 42px;
+  width: 100%;
+  font-family: 'Maven Pro', sans-serif;
+}
+
+.client-form-wrapper input:focus,
+.client-form-wrapper select:focus {
+  border: 1px solid var(--jobopening-primary-dark);
+  outline: none;
+}
+
+/* Phone Input */
+/* .client-form-wrapper .react-tel-input .form-control {
+  width: 100% !important;
+  border: 1px solid var(--jobopening-primary-color);
+  outline: none;
+  height: 100%;
+
+  height: 40px !important;
+} */
+input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    background-color: transparent !important;
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    box-shadow: 0 0 0px 1000px white inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+/* Address Section */
+.client-form-wrapper h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.react-tel-input .flag-dropdown {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  border: 1px solid #087465;
+  border-radius: 3px 0 0 3px;
+}
+.react-tel-input .country-list .search-emoji{
+  display: none;
+}
+.react-tel-input .country-list {
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  border-radius: 6px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+.client-form-wrapper .copy-address-dropdown {
+  padding: 10px;
+  border: 1px solid var(--jobopening-primary-color);
+  border-radius: 5px;
+  height: 42px;
+  max-width: 125px;
+  font-family: 'Maven Pro', sans-serif;
+
+}
+
+/* Form Actions */
+.client-form-wrapper .client-form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Button Group */
+.client-form-wrapper .client-button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Buttons */
+.client-form-wrapper button {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  background-color: #087465;
+  color: white; 
+  transition: background 0.3s ease-in-out;
+}
+
+.client-form-wrapper .client-cancel-btn {
+  background: #eeeded;
+  color: #7a1717;
+  font-weight: 1000;
+}
+
+.client-form-wrapper .client-cancel-btn:hover {
+  background-color: #d9d9d9;
+  font-weight: bold;
+}
+
+
+.client-form-wrapper .save-button {
+  background-color:#01544b;
+  color: white;
+}
+
+.client-form-wrapper .save-button:hover {
+  background-color: #068686;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .client-form-wrapper .client-form-client-form-container {
+    padding: 20px;
+  }
+
+  .client-form-wrapper .client-form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .client-form-wrapper button {
+    width: 100%;
+  }
+}
+.client-form-grid {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}

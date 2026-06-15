@@ -1,0 +1,34 @@
+﻿Fetching schema info from source (65.38.99.253)...
+Fetching schema info from target (66.179.82.107)...
+
+--- ANALYSIS RESULTS ---
+
+MISSING TABLES in Target:
+ - core.Region
+ - core.Team
+ - core.TeamMember
+ - recruit.CandidateDocumentParseRun
+ - recruit.Job
+ - recruit.JobRecruiterAssignment
+ - recruit.JobSource
+ - recruit.JobStatusHistory
+ - recruit.Notification
+ - recruit.StageDefinition
+ - recruit.StageTransitionRule
+ - recruit.Submission
+ - recruit.SubmissionClientEvent
+ - recruit.SubmissionOwnerHistory
+ - recruit.SubmissionResume
+ - recruit.SubmissionStatusHistory
+
+MISSING COLUMNS in Target:
+ - recruit.CandidateCertification: DocumentId (bigint, NULL)
+ - recruit.CandidateDocument: ExtractedTitle (nvarchar(200), NULL)
+ - recruit.CandidateEducation: DocumentId (bigint, NULL)
+ - recruit.CandidateIdentity: IdentityValueNormalised (nvarchar(320), NULL)
+ - recruit.CandidateSkill: DocumentId (bigint, NULL)
+ - recruit.CandidateStatusHistory: CandidateStatusHistoryId (bigint, NOT NULL)
+ - recruit.CandidateStatusHistory: FromStatus (nvarchar(20), NULL)
+ - recruit.CandidateStatusHistory: ToStatus (nvarchar(20), NOT NULL)
+ - recruit.CandidateStatusHistory: ChangedAtUtc (datetime2, NOT NULL)
+ - recruit.CandidateStatusHistory: ReasonText (nvarchar(500), NULL)

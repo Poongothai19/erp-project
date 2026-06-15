@@ -1,0 +1,47 @@
+/* Default Light Mode */
+.settings-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode */
+body.dark-mode .settings-container {
+    background: #333;
+    color: white;
+}
+
+/* Input Fields */
+.settings-container input {
+    padding: 8px;
+    margin: 5px 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Dark Mode Input */
+body.dark-mode .settings-container input {
+    background: #444;
+    color: white;
+    border: 1px solid #888;
+}
+
+/* Buttons */
+.settings-container button {
+    background: #00796b;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+body.dark-mode .settings-container button {
+    background: #009688;
+}

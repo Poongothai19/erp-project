@@ -1,0 +1,292 @@
+:root {
+  --primary-color: #087465;
+  --gradient-color: linear-gradient(180deg, #019d88, #0d2e26);
+  --light-background: #f8f9fa;
+  --white: #ffffff;
+  --border-light: #dbdbdb;
+  --font-family-main: 'Maven Pro', sans-serif;
+}
+
+.Contact-form {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--light-background);
+  font-family: var(--font-family-main);
+}
+
+/* Form Container */
+.Contact-form .form-container {
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  padding: 30px;
+}
+
+/* Header Section */
+.Contact-form .Contact-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.Contact-form .Contact-header-section h1 {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--primary-color);
+}
+
+/* Buttons */
+.Contact-form .header-buttons,
+.Contact-form .right-buttons,
+.Contact-form .Contact-form-buttons,
+.Contact-form .footer-tabs,
+.Contact-form .Contact-attachment-dropdown {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.Contact-form button,
+.Contact-form .Contact-Save-btn-btn,
+.Contact-form .dropdown-btn,
+.Contact-form .Contact-browse-btn {
+  font-size: 14px;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: none;
+}
+
+.Contact-form .Contact-Save-btn-btn,
+.Contact-form .dropdown-btn,
+.Contact-form .Contact-browse-btn,
+.Contact-form .Contact-Save-btn {
+  background: var(--gradient-color);
+  color: var(--white);
+  border: 1px solid var(--primary-color);
+}
+
+.Contact-form .Contact-cancel-btn {
+  background: #f1f1f1;
+  font-weight: bold;
+  color: #a80000;
+  border: 1px solid var(--border-light);
+}
+
+/* Input & Select Styling */
+.Contact-form input,
+.Contact-form textarea,
+.Contact-form .react-tel-input .form-control {
+ width: 100%; 
+  padding: 10px 12px;
+  border: 1px solid var(--primary-color);
+  border-radius: 6px;
+  font-family: var(--font-family-main);
+  font-size: 14px;
+  background: var(--white);
+  transition: border-color 0.3s;
+}
+
+.Contact-form input:focus,
+.Contact-form select:focus,
+.Contact-form textarea:focus {
+  outline: none;
+  border-color: #019d88;
+  box-shadow: 0 0 0 2px rgba(1, 157, 136, 0.2);
+}
+
+.Contact-form select {
+
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 6px;
+  font-family: var(--font-family-main);
+  font-size: 14px;
+  background-color: var(--white);
+}
+
+/* Name Fieldset Styling */
+.Contact-form .Contact-name-fieldset {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  flex-wrap: nowrap;
+}
+
+.Contact-form .Contact-title-select {
+  min-width: 90px;
+  padding: 10px 12px;
+  border: 1px solid var(--primary-color);
+  border-radius: 6px;
+  background-color: var(--white);
+  font-size: 14px;
+  height: 90%;
+}
+
+.Contact-form .Contact-name-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--primary-color);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Sections */
+.Contact-form .Contact-section,
+.contact-Contact-section {
+  background: var(--white);
+  padding: 24px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.Contact-form h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Grid Layout */
+.Contact-form .Contact-form-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.Contact-form .Contact-form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.Contact-form .Contact-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Add these styles to your existing CreateContact.css file */
+.Contact-form-group input[readonly] {
+  cursor: default;
+}
+
+.Contact-form-group button {
+  color: #087465;
+}
+
+.Contact-form-group button:hover {
+  color: #065d50;
+}
+
+/* Checkbox */
+.Contact-form input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary-color);
+}
+
+/* Attachment Upload */
+.Contact-form .attachment-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.Contact-form .Contact-attachment-label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+/* Copy Dropdown */
+.Contact-form .Contact-copy-address {
+  position: relative;
+}
+
+.Contact-form .Contact-copy-dropdown {
+  background: var(--gradient-color);
+  color: var(--white);
+  border: 1px solid var(--primary-color);
+}
+
+.Contact-form .Contact-copy-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  width: 200px;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 10;
+}
+
+.Contact-form .Contact-copy-address:hover .Contact-copy-options {
+  display: block;
+}
+
+/* Rich Text Editor */
+.contact-quilleditor {
+  background: var(--white);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.contact-quilleditor .ql-editor {
+  min-height: 200px;
+  max-height: 500px;
+  overflow-y: auto;
+  border: 1px solid var(--primary-color);
+}
+
+/* Footer */
+.Contact-form .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  border-top: 1px solid #eaeaea;
+  padding: 10px 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.Contact-form .smart-chat {
+  font-size: 14px;
+  color: #999;
+}
+
+.Contact-form .help-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .Contact-form .Contact-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .Contact-form .Contact-name-fieldset {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .Contact-form .Contact-title-select,
+  .Contact-form .Contact-name-input {
+    width: 100%;
+  }
+}

@@ -1,0 +1,204 @@
+/* Container and Overlay */
+.candidate-listings-page-container {
+  display: flex;
+  position: relative;
+  height: 100%;
+  background-color: #f8f9fa;
+}
+
+/* .candidate-listings-sidebar-open .candidate-listings-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 2;
+} */
+
+/* Sidebar (Filters, CreateView, ManageView) */
+.candidate-listings-filter-sidebar.active {
+  margin-left:20px;
+  margin-top:10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+/* Main Content */
+.candidate-listings-content {
+  flex: 1;
+  padding: 2rem;
+  z-index: 1;
+  transition: margin-left 0.3s ease;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: #333;
+}
+
+/* Search & Filter Row */
+.candidate-search-filter-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+
+/* Search Box */
+.candidate-search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: white;
+  flex-grow: 1;
+  max-width: 400px;
+  min-width: 250px;
+  margin-left: auto; /* Pushes the container to the right */
+}
+
+.candidate-search-icon {
+  margin-right: 6px;
+  color: #888;
+}
+.candidate-search-input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+}
+
+/* Toolbar */
+.candidate-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.candidate-toolbar-left-group,
+.candidate-toolbar-right-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Buttons */
+.candidate-delete-selected-btn {
+  background: red;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background 0.3s ease;
+}
+.candidate-delete-selected-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.candidate-delete-selected-btn:hover:not(:disabled) {
+  background-color: #b02a37;
+}
+
+.candidate-import-button,
+.candidate-navigate-button,.candidate-filter-button{
+  background: linear-gradient(180deg, #019d88, #0d2e26);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.candidate-import-button:hover,
+.candidate-navigate-button:hover, .candidate-filter-button{
+  background: linear-gradient(180deg, #027a6e, #0a251f);
+  transform: translateY(-1px);
+}
+
+.candidate-import-button:active,
+.candidate-navigate-button:active, .candidate-filter-button:active{
+  transform: scale(0.98);
+}
+
+/* File input (hidden) */
+input[type="file"] {
+  display: none;
+}
+
+/* Pagination & Row Selector */
+.pagination-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Table (delegated to CandidatesTable, but here’s base styles if needed) */
+.candidates-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.candidates-table th,
+.candidates-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  text-align: left;
+}
+
+.candidates-table th {
+  background-color: #f1f1f1;
+  font-weight: 600;
+  color: #444;
+}
+
+.candidates-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .candidate-listings-content {
+    padding: 1rem;
+  }
+
+  .candidate-search-filter-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .candidate-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .candidate-toolbar-left-group,
+  .candidate-toolbar-right-group {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

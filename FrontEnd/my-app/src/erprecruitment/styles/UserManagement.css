@@ -1,0 +1,626 @@
+/* UserManagement.css */
+.user-management-container {
+  padding: 20px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.user-management-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.user-management-header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-management-header-icon {
+  font-size: 24px;
+  color: #019d88;
+}
+
+.user-management-title {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+  font-weight: 600;
+}
+
+.user-management-count {
+  background-color: #019d88;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.user-management-add-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: linear-gradient(180deg, #019d88, #0d2e26);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: transform 0.2s;
+}
+
+.user-management-filters-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.user-management-search-container {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+}
+
+.user-management-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+  font-size: 16px;
+}
+
+.user-management-search-input {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.user-management-filter-group {
+  display: flex;
+  gap: 10px;
+}
+
+.user-management-filter-select {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+  background-color: white;
+}
+
+.user-management-table-container {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.user-management-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-management-table-header {
+  background-color: #f8f9fa;
+}
+
+.user-management-th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.user-management-table-row {
+  border-bottom: 1px solid #f1f3f4;
+  transition: background-color 0.2s;
+}
+
+.user-management-td {
+  padding: 16px;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.user-management-user-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-management-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #019d88;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.user-management-user-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.user-management-user-email {
+  color: #6c757d;
+  font-size: 12px;
+}
+
+.user-management-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.user-management-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #202021;
+}
+
+.user-management-role-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.user-management-role-icon {
+  font-size: 16px;
+}
+
+.user-management-status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.user-management-date-cell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  
+  font-size: 12px;
+  color: #202021;
+}
+
+.user-management-date-time {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.user-management-never-login {
+  color: #dc3545;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.user-management-actions-container {
+  position: relative;
+}
+
+.user-management-action-button {
+  padding: 8px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #6c757d;
+  transition: background-color 0.2s;
+}
+
+.user-management-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 1000;
+  min-width: 120px;
+}
+
+.user-management-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  text-align: left;
+  transition: background-color 0.2s;
+}
+
+.user-management-dropdown-item-danger {
+  color: #dc3545 !important;
+}
+
+.user-management-dropdown-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+}
+
+.user-management-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.user-management-modal {
+  background-color: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 95vh;
+  overflow: auto;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.user-management-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.user-management-modal-title {
+  font-size: 20px;
+  color:rgb(35, 149, 115);
+  margin: 0;
+  font-weight: 600;
+}
+
+.user-management-close-button {
+  padding: 8px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #6c757d;
+  font-size: 18px;
+}
+
+.user-management-modal-body {
+  padding: 20px;
+}
+
+.user-management-form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.user-management-form-group {
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.user-management-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.user-management-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.user-management-select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.user-management-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 20px;
+  border-top: 1px solid #e9ecef;
+}
+
+.user-management-cancel-button {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  background-color: white;
+  color: #333;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.user-management-save-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(180deg, #019d88, #0d2e26);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+
+/* Session tracking styles */
+.session-tracker-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.session-login-icon {
+  color: #20c997;
+}
+
+.session-logout-icon {
+  color: #dc3545;
+}
+
+.session-hours-icon {
+  color: #17a2b8;
+}
+
+.session-time-display {
+  font-size: 11px;
+  color: #666;
+}
+
+.session-total-hours {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Session modal styles */
+.session-analytics-modal {
+  max-width: 800px;
+}
+
+.session-analytics-body {
+  padding: 20px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.session-period-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.session-period-dropdown {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.session-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.session-metric-card {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #e9ecef;
+}
+
+.session-metric-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.session-metric-label {
+  font-size: 12px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.session-history-section h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.session-history-table {
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.session-table-header-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background: #f8f9fa;
+  padding: 12px 15px;
+  font-weight: 600;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.session-table-data-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 12px 15px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.session-table-data-row:last-child {
+  border-bottom: none;
+}
+
+.session-table-data-row:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.session-empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-style: italic;
+}
+
+.session-status-indicator {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.session-status-completed {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.session-status-active {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.session-duration-badge {
+  font-size: 11px;
+  font-weight: 500;
+  color: #495057;
+}
+
+.session-debug-button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.session-debug-button:hover {
+  background: #5a6268;
+}
+
+
+/* Password Input Wrapper */
+.user-management-password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.user-management-password-input-wrapper .user-management-input {
+  padding-right: 40px;
+}
+
+.user-management-password-toggle {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.user-management-password-toggle:hover {
+  color: #333;
+}
+
+.user-management-password-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Delete Button Styling - Add this to UserManagement.css */
+
+.user-management-dropdown-delete {
+  color: #dc3545;
+  border-top: 1px solid #f0f0f0;
+}
+
+.user-management-dropdown-delete:hover {
+  background-color: #ffe6e6;
+  color: #c82333;
+}
+
+.user-management-dropdown-delete svg {
+  margin-right: 6px;
+}

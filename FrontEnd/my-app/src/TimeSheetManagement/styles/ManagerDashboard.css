@@ -1,0 +1,2444 @@
+/* ============================================================================
+COMPLETE MANAGERDASHBOARD.CSS - WITH C2C TABLE ALIGNMENT FIXES
+============================================================================ */
+
+/* CSS Custom Properties */
+:root {
+  --mts-primary-green: #059669;
+  --mts-primary-green-hover: #047857;
+  --mts-primary-green-light: #10b981;
+  --mts-success-green: #16a34a;
+  --mts-success-green-hover: #15803d;
+  --mts-danger-red: #dc2626;
+  --mts-danger-red-hover: #b91c1c;
+  --mts-warning-orange: #f59e0b;
+  --mts-warning-orange-hover: #d97706;
+  --mts-blue: #3b82f6;
+  --mts-blue-hover: #2563eb;
+  --mts-gray-50: #f8fafc;
+  --mts-gray-100: #f1f5f9;
+  --mts-gray-200: #e2e8f0;
+  --mts-gray-300: #cbd5e1;
+  --mts-gray-400: #94a3b8;
+  --mts-gray-500: #64748b;
+  --mts-gray-600: #475569;
+  --mts-gray-700: #334155;
+  --mts-gray-800: #1e293b;
+  --mts-gray-900: #0f172a;
+  --mts-white: #ffffff;
+  --mts-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --mts-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
+  --mts-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
+  --mts-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+  --mts-radius-sm: 6px;
+  --mts-radius-md: 8px;
+  --mts-radius-lg: 12px;
+  --mts-radius-xl: 16px;
+  --mts-font-mono: Monaco, Menlo, SF Mono, 'Courier New', monospace;
+  --mts-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--mts-font-sans);
+  line-height: 1.5;
+  color: var(--mts-gray-800);
+  background-color: var(--mts-gray-50);
+}
+
+/* Dashboard container */
+.mts-container {
+  min-height: 100vh;
+  background-color: var(--mts-gray-50);
+  padding: 0;
+}
+
+/* Header styles */
+.mts-header {
+  background-color: var(--mts-white);
+  border-bottom: 1px solid var(--mts-gray-200);
+  padding: 0.6rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: var(--mts-shadow-sm);
+}
+
+.mts-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.mts-header-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--mts-gray-800);
+  margin: 0 0 0.4rem 0;
+  letter-spacing: -0.025em;
+}
+
+.mts-header-subtitle {
+  color: var(--mts-gray-500);
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.mts-header-time {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--mts-gray-100);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--mts-radius-lg);
+  font-weight: 600;
+  color: var(--mts-gray-600);
+  border: 1px solid var(--mts-gray-200);
+  font-family: var(--mts-font-mono);
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+/* Back button */
+.mts-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--mts-gray-100);
+  border: 1px solid var(--mts-gray-200);
+  border-radius: var(--mts-radius-sm);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: var(--mts-gray-600);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.mts-back-btn:hover {
+  background-color: var(--mts-gray-200);
+  color: var(--mts-gray-700);
+  transform: translateY(-1px);
+  box-shadow: var(--mts-shadow-sm);
+}
+
+/* Company info banner */
+.company-info-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.1);
+  border-radius: var(--mts-radius-md);
+  font-size: 0.875rem;
+  color: var(--mts-gray-600);
+}
+
+.company-info-banner svg {
+  color: var(--mts-primary-green);
+  flex-shrink: 0;
+}
+
+/* Navigation tabs */
+.mts-navigation-tabs {
+  background-color: var(--mts-white);
+  border-bottom: 1px solid var(--mts-gray-200);
+  padding: 0 rem;
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: sticky;
+  top: 85px;
+  z-index: 40;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.mts-navigation-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.mts-nav-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1.5rem;
+  background: none;
+  border: none;
+  color: var(--mts-gray-500);
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.mts-nav-tab:hover {
+  color: var(--mts-gray-700);
+  background-color: var(--mts-gray-50);
+}
+
+.mts-nav-tab.active {
+  color: var(--mts-primary-green);
+  border-bottom-color: var(--mts-primary-green);
+  background-color: rgba(5, 150, 105, 0.05);
+}
+
+/* Main content */
+.mts-main-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
+/* Employee table */
+.mts-employee-table {
+  background-color: var(--mts-white);
+  border-radius: var(--mts-radius-xl);
+  padding: 0;
+  margin-bottom: 2rem;
+  box-shadow: var(--mts-shadow-sm);
+  border: 1px solid var(--mts-gray-200);
+  overflow: hidden;
+}
+
+.mts-employee-table-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+  border-bottom: 1px solid var(--mts-gray-200);
+  background-color: var(--mts-white);
+}
+
+.mts-employee-table-title {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--mts-gray-800);
+  font-weight: 600;
+}
+
+/* Add Employee Button */
+.mts-add-employee-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--mts-primary-green);
+  color: var(--mts-white);
+  border: none;
+  border-radius: var(--mts-radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  box-shadow: var(--mts-shadow-sm);
+}
+
+.mts-add-employee-btn:hover {
+  background-color: var(--mts-primary-green-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--mts-shadow-md);
+}
+
+.mts-add-employee-btn:active {
+  transform: translateY(0);
+  box-shadow: var(--mts-shadow-sm);
+}
+
+/* ============================================================================
+EMPLOYEE DIRECTORY TABLE - ORIGINAL ALIGNMENT (UNCHANGED)
+============================================================================ */
+
+.mts-employee-table-table-header {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr 1fr 1.2fr 1.5fr 0.8fr 0.7fr;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--mts-gray-50);
+  border-bottom: 1px solid var(--mts-gray-200);
+  font-weight: 600;
+  color: var(--mts-gray-700);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mts-employee-table-table-rows {
+  background-color: var(--mts-white);
+}
+
+.mts-employee-table-table-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr 1fr 1.2fr 1.5fr 0.8fr 0.7fr;
+  gap: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  align-items: center;
+  border-bottom: 1px solid var(--mts-gray-100);
+  transition: background-color 0.2s ease;
+}
+
+.mts-employee-table-table-row:hover {
+  background-color: var(--mts-gray-50);
+}
+
+.mts-employee-table-table-row:last-child {
+  border-bottom: none;
+}
+
+/* ============================================================================
+C2C TABLE SPECIFIC ALIGNMENT - OVERRIDES FOR C2C VIEW ONLY
+============================================================================ */
+
+/* Apply C2C specific alignment only when viewing C2C */
+.mts-c2c-view .mts-employee-table-table-header {
+  grid-template-columns: 1.6fr 1.4fr 1fr 1.2fr 0.9fr 0.9fr;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.mts-c2c-view .mts-employee-table-table-row {
+  grid-template-columns: 1.6fr 1.4fr 1fr 1.2fr 0.9fr 0.9fr;
+  gap: 0.75rem;
+  padding: 0.875rem 1.5rem;
+}
+
+/* HEADER TEXT ALIGNMENT FOR C2C */
+.mts-c2c-view .mts-employee-table-table-header > div:nth-child(1) {
+  text-align: left;
+}
+
+.mts-c2c-view .mts-employee-table-table-header > div:nth-child(2) {
+  text-align: left;
+}
+
+.mts-c2c-view .mts-employee-table-table-header > div:nth-child(3) {
+  text-align: center;
+}
+
+.mts-c2c-view .mts-employee-table-table-header > div:nth-child(4) {
+  text-align: center;
+}
+
+.mts-c2c-view .mts-employee-table-table-header > div:nth-child(5) {
+  text-align: center;
+}
+
+.mts-c2c-view .mts-employee-table-table-header > div:nth-child(6) {
+  text-align: right;
+}
+
+/* COLUMN SPECIFIC STYLES FOR C2C */
+
+/* COLUMN 1: Contractor Name & Company */
+.mts-c2c-view .mts-employee-table-table-row > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.mts-c2c-view .mts-employee-table-table-row > div:nth-child(1) .mts-employee-name-btn {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.mts-c2c-view .mts-employee-table-table-row > div:nth-child(1) .mts-contact-info {
+  font-size: 0.8rem;
+  color: var(--mts-gray-600);
+}
+
+/* COLUMN 2: Contact Information */
+.mts-c2c-view .mts-employee-table-table-row > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.mts-c2c-view .mts-employee-table-table-row > div:nth-child(2) .mts-contact-email {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.mts-c2c-view .mts-employee-table-table-row > div:nth-child(2) .mts-contact-phone {
+  font-size: 0.875rem;
+  color: var(--mts-danger-red);
+}
+
+/* COLUMN 3: Bill Rate - CENTER ALIGNED */
+.mts-c2c-view .mts-employee-table-table-row > div:nth-child(3) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  color: var(--mts-primary-green);
+  white-space: nowrap;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+/* COLUMN 4: Contract Period - CENTER ALIGNED */
+.mts-c2c-view .mts-employee-table-table-row > div:nth-child(4) {
+  text-align: center;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+/* COLUMN 5: Status - CENTER ALIGNED */
+.mts-c2c-view .mts-employee-table-table-row > div:nth-child(5) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mts-c2c-view .mts-employee-table-table-row > div:nth-child(5) .mts-status-badge {
+  white-space: nowrap;
+  margin: 0 auto;
+}
+
+/* COLUMN 6: Actions - RIGHT ALIGNED */
+.mts-c2c-view .mts-employee-table-table-row > div:nth-child(6) {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+/* Employee name button */
+.mts-employee-name-btn {
+  background: none;
+  border: none;
+  color: var(--mts-blue);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+  text-align: left;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.mts-employee-name-btn:hover {
+  color: var(--mts-blue-hover);
+  text-decoration: underline;
+}
+
+/* Status badges */
+.mts-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--mts-radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.mts-status-registered {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #22c55e;
+}
+
+.mts-status-not-registered {
+  background-color: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #ef4444;
+}
+
+.mts-status-pending {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid var(--mts-warning-orange);
+}
+
+/* Contact info */
+.mts-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.mts-contact-email {
+  color: var(--mts-gray-600);
+  font-weight: 500;
+}
+
+.mts-contact-phone {
+  color: var(--mts-danger-red);
+  font-weight: 500;
+}
+
+/* Employment info */
+.mts-employment-type {
+  font-size: 0.875rem;
+  color: var(--mts-gray-800);
+  font-weight: 500;
+}
+
+.mts-employment-details {
+  font-size: 0.75rem;
+  color: var(--mts-gray-500);
+  margin-top: 0.25rem;
+}
+
+/* Action buttons */
+.mts-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.mts-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0.5rem;
+  background-color: var(--mts-gray-50);
+  border: 1px solid var(--mts-gray-200);
+  border-radius: var(--mts-radius-sm);
+  cursor: pointer;
+  color: var(--mts-gray-500);
+  transition: all 0.2s ease;
+}
+
+.mts-action-btn:hover {
+  background-color: var(--mts-gray-100);
+  color: var(--mts-gray-700);
+  transform: translateY(-1px);
+  box-shadow: var(--mts-shadow-sm);
+}
+
+.mts-action-btn.view {
+  color: var(--mts-primary-green);
+}
+
+.mts-action-btn.view:hover {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--mts-primary-green-hover);
+}
+
+.mts-action-btn.delete {
+  color: var(--mts-danger-red);
+}
+
+.mts-action-btn.delete:hover {
+  background-color: #fee2e2;
+  color: var(--mts-danger-red-hover);
+}
+
+.mts-action-btn.approve {
+  color: var(--mts-success-green);
+}
+
+.mts-action-btn.approve:hover:not(:disabled) {
+  background-color: #dcfce7;
+  color: var(--mts-success-green-hover);
+}
+
+.mts-action-btn.reject {
+  color: var(--mts-danger-red);
+}
+
+.mts-action-btn.reject:hover:not(:disabled) {
+  background-color: #fee2e2;
+  color: var(--mts-danger-red-hover);
+}
+
+.mts-action-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Timesheet specific styles */
+.mts-timesheet-header {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 1.5fr 1fr 1.5fr 1.2fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background-color: var(--mts-gray-50);
+  border-bottom: 1px solid var(--mts-gray-200);
+  font-weight: 600;
+  color: var(--mts-gray-700);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mts-table-header {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 1.5fr 1fr 1.5fr 1.2fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background-color: var(--mts-gray-50);
+  border-bottom: 1px solid var(--mts-gray-200);
+  font-weight: 600;
+  color: var(--mts-gray-700);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mts-table-rows {
+  background-color: var(--mts-white);
+}
+
+.mts-table-row {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 1.5fr 1fr 1.5fr 1.2fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1.25rem 2rem;
+  align-items: center;
+  border-bottom: 1px solid var(--mts-gray-100);
+  transition: background-color 0.2s ease;
+}
+
+.mts-table-row:hover {
+  background-color: var(--mts-gray-50);
+}
+
+.mts-table-row:last-child {
+  border-bottom: none;
+}
+
+.mts-checkbox-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mts-checkbox-cell input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.mts-employee-name {
+  font-weight: 600;
+  color: var(--mts-gray-800);
+}
+
+.mts-employee-id {
+  font-size: 0.75rem;
+  color: var(--mts-gray-500);
+  margin-top: 0.25rem;
+}
+
+.mts-period {
+  font-size: 0.875rem;
+  color: var(--mts-gray-700);
+}
+
+.mts-hours {
+  font-weight: 600;
+  color: var(--mts-gray-800);
+}
+
+.mts-overtime {
+  font-size: 0.875rem;
+  color: var(--mts-warning-orange);
+  font-weight: 500;
+}
+
+.mts-timesheet-status {
+  display: flex;
+  justify-content: center;
+}
+
+.mts-timesheet-notes {
+  font-size: 0.875rem;
+  color: var(--mts-gray-600);
+}
+
+.mts-timesheet-hours {
+  font-weight: 600;
+  color: var(--mts-gray-800);
+}
+
+.mts-timesheet-processed {
+  opacity: 0.7;
+  background-color: var(--mts-gray-50);
+}
+
+.mts-bulk-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.mts-bulk-approve-btn,
+.mts-bulk-reject-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  border: none;
+  border-radius: var(--mts-radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.mts-bulk-approve-btn {
+  background-color: var(--mts-success-green);
+  color: var(--mts-white);
+}
+
+.mts-bulk-approve-btn:hover:not(:disabled) {
+  background-color: var(--mts-success-green-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--mts-shadow-sm);
+}
+
+.mts-bulk-reject-btn {
+  background-color: var(--mts-danger-red);
+  color: var(--mts-white);
+}
+
+.mts-bulk-reject-btn:hover:not(:disabled) {
+  background-color: var(--mts-danger-red-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--mts-shadow-sm);
+}
+
+.mts-bulk-approve-btn:disabled,
+.mts-bulk-reject-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ============================================================================
+EMPLOYEE MODAL STYLES - FIXED VERSION
+============================================================================ */
+
+.mts-emp-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 1050;
+  padding: 2rem 1rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.mts-emp-modal-content {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 700px;
+  min-height: auto;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+  position: relative;
+  margin: 2rem auto;
+  animation: none !important;
+  transition: none !important;
+}
+
+.mts-emp-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--mts-gray-200);
+  background-color: var(--mts-white);
+  border-radius: 1rem 1rem 0 0;
+  top: 0;
+  z-index: 1;
+}
+
+.mts-emp-modal-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--mts-gray-800);
+  line-height: 1.2;
+}
+
+.mts-emp-modal-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  border-radius: var(--mts-radius-sm);
+  cursor: pointer;
+  color: var(--mts-gray-500);
+  transition: all 0.15s ease;
+}
+
+.mts-emp-modal-close-btn:hover {
+  background-color: var(--mts-gray-100);
+  color: var(--mts-gray-700);
+}
+
+.mts-emp-modal-body {
+  padding: 2rem;
+  background-color: var(--mts-white);
+}
+
+.mts-emp-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mts-emp-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.mts-emp-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mts-emp-form-group label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--mts-gray-700);
+  line-height: 1.2;
+}
+
+.mts-emp-form-input {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+  line-height: 1.5;
+  transition: border-color 0.15s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.mts-emp-form-input:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.mts-emp-form-input.mts-emp-form-input-disabled {
+  background-color: var(--mts-gray-100);
+  color: var(--mts-gray-500);
+  cursor: not-allowed;
+}
+
+.mts-emp-form-input::placeholder {
+  color: var(--mts-gray-400);
+}
+
+.mts-emp-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid var(--mts-gray-200);
+  background-color: var(--mts-white);
+  border-radius: 0 0 1rem 1rem;
+}
+
+.mts-emp-modal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--mts-radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.875rem;
+  line-height: 1;
+  transition: all 0.15s ease;
+}
+
+.mts-emp-modal-btn-cancel {
+  background-color: var(--mts-gray-100);
+  color: var(--mts-gray-700);
+  border: 1px solid var(--mts-gray-200);
+}
+
+.mts-emp-modal-btn-cancel:hover {
+  background-color: var(--mts-gray-200);
+  border-color: var(--mts-gray-300);
+}
+
+.mts-emp-modal-btn-save {
+  background-color: var(--mts-primary-green);
+  color: var(--mts-white);
+  border: 1px solid var(--mts-primary-green);
+}
+
+.mts-emp-modal-btn-save:hover:not(:disabled) {
+  background-color: var(--mts-primary-green-hover);
+  border-color: var(--mts-primary-green-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--mts-shadow-sm);
+}
+
+.mts-emp-modal-btn-save:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ============================================================================
+RESPONSIVE ADJUSTMENTS
+============================================================================ */
+
+@media (max-width: 1280px) {
+  .mts-employee-table-table-header {
+    grid-template-columns: 1.5fr 1.3fr 0.8fr 1.1fr 0.8fr 0.8fr;
+    gap: 1rem;
+    padding: 0.875rem 1.5rem;
+  }
+
+  .mts-employee-table-table-row {
+    grid-template-columns: 1.5fr 1.3fr 0.8fr 1.1fr 0.8fr 0.8fr;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mts-employee-table-table-header {
+    grid-template-columns: 1.4fr 1.2fr 0.9fr 1fr 0.9fr 0.8fr;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.7rem;
+  }
+
+  .mts-employee-table-table-row {
+    grid-template-columns: 1.4fr 1.2fr 0.9fr 1fr 0.9fr 0.8fr;
+    gap: 0.75rem;
+    padding: 0.875rem 1.25rem;
+  }
+
+  .mts-employee-table-table-row > div:nth-child(1) .mts-contact-info {
+    font-size: 0.75rem;
+  }
+
+  .mts-emp-form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .mts-emp-modal-content {
+    max-width: 600px;
+    margin: 1rem auto;
+  }
+
+  .mts-emp-modal-overlay {
+    padding: 1rem;
+  }
+
+  .mts-main-content {
+    padding: 1rem;
+  }
+
+  .mts-header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .mts-header-time {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .mts-emp-modal-overlay {
+    padding: 0.5rem;
+    align-items: stretch;
+  }
+
+  .mts-emp-modal-content {
+    margin: 0;
+    border-radius: 0.5rem;
+    max-width: 100%;
+  }
+
+  .mts-emp-modal-body {
+    padding: 1.5rem;
+  }
+
+  .mts-emp-modal-actions {
+    padding: 1rem 1.5rem;
+    flex-direction: column;
+  }
+
+  .mts-emp-modal-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .mts-employee-table-table-header {
+    display: none;
+  }
+
+  .mts-employee-table-table-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--mts-gray-200);
+    border-radius: var(--mts-radius-md);
+    margin-bottom: 1rem;
+    background-color: var(--mts-white);
+  }
+
+  .mts-employee-table-table-rows {
+    padding: 1rem 0;
+  }
+
+  .mts-employee-table-table-row > div::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--mts-gray-500);
+    margin-bottom: 0.25rem;
+  }
+
+  .mts-employee-table-table-row > div:nth-child(1)::before {
+    content: "Contractor & Company";
+  }
+
+  .mts-employee-table-table-row > div:nth-child(2)::before {
+    content: "Contact Information";
+  }
+
+  .mts-employee-table-table-row > div:nth-child(3)::before {
+    content: "Bill Rate";
+  }
+
+  .mts-employee-table-table-row > div:nth-child(4)::before {
+    content: "Contract Period";
+  }
+
+  .mts-employee-table-table-row > div:nth-child(5)::before {
+    content: "Status";
+  }
+
+  .mts-employee-table-table-row > div:nth-child(6)::before {
+    content: "Actions";
+  }
+
+  .mts-employee-table-table-row > div:nth-child(3) {
+    text-align: left;
+  }
+
+  .mts-employee-table-table-row > div:nth-child(4) {
+    text-align: left;
+  }
+
+  .mts-employee-table-table-row > div:nth-child(5) {
+    justify-content: flex-start;
+  }
+
+  .mts-employee-table-table-row > div:nth-child(6) {
+    justify-content: flex-start;
+  }
+
+  .mts-actions {
+    margin-top: 0.5rem;
+  }
+
+  .mts-navigation-tabs {
+    padding: 0 1rem;
+  }
+
+  .mts-header {
+    padding: 1rem;
+  }
+
+  .mts-employee-table-header-container {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .mts-employee-table-title {
+    font-size: 1.125rem;
+  }
+
+  .mts-add-employee-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .mts-emp-modal-header {
+    padding: 1rem;
+  }
+
+  .mts-emp-modal-body {
+    padding: 1rem;
+  }
+
+  .mts-emp-modal-actions {
+    padding: 1rem;
+  }
+
+  .mts-emp-modal-title {
+    font-size: 1.125rem;
+  }
+
+  .mts-header-title {
+    font-size: 1.5rem;
+  }
+
+  .mts-header-subtitle {
+    font-size: 0.875rem;
+  }
+
+  .mts-nav-tab {
+    padding: 0.75rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  .mts-employee-table-table-row {
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .mts-employee-table-table-row > div::before {
+    font-size: 0.7rem;
+  }
+
+  .mts-action-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .mts-mts-bulk-actions {
+    flex-direction: column;
+  }
+
+  .mts-bulk-approve-btn,
+  .mts-bulk-reject-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================================================
+ACCESSIBILITY AND PERFORMANCE
+============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .mts-emp-modal-content {
+    animation: none !important;
+  }
+  
+  .mts-action-btn,
+  .mts-nav-tab,
+  .mts-emp-modal-btn,
+  .mts-add-employee-btn,
+  .mts-bulk-approve-btn,
+  .mts-bulk-reject-btn,
+  .mts-back-btn,
+  .mts-emp-form-input {
+    transition: none !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .mts-emp-modal-overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .mts-status-badge {
+    border-width: 2px;
+  }
+  
+  .mts-nav-tab.active {
+    border-bottom-width: 4px;
+  }
+}
+
+/* ============================================================================
+FOCUS MANAGEMENT FOR MODALS AND ACCESSIBILITY
+============================================================================ */
+
+.mts-emp-modal-overlay:focus {
+  outline: none;
+}
+
+.mts-emp-modal-content:focus {
+  outline: 2px solid var(--mts-primary-green);
+  outline-offset: 2px;
+}
+
+button:focus {
+  /* outline: 2px solid var(--mts-primary-green); */
+  outline-offset: 2px;
+}
+
+input:focus {
+  outline: none;
+}
+
+/* ============================================================================
+LOADING STATES
+============================================================================ */
+
+.mts-loading {
+  opacity: 0.6;
+  pointer-events: none;
+  position: relative;
+}
+
+.mts-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid var(--mts-gray-300);
+  border-top-color: var(--mts-primary-green);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  gap: 1rem;
+  color: var(--mts-gray-600);
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--mts-gray-200);
+  border-top-color: var(--mts-primary-green);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* ============================================================================
+NO DATA STATE
+============================================================================ */
+
+.no-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  gap: 1rem;
+  color: var(--mts-gray-600);
+  text-align: center;
+}
+
+.no-data svg {
+  width: 64px;
+  height: 64px;
+  color: var(--mts-gray-300);
+  margin-bottom: 1rem;
+}
+
+.no-data p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* ============================================================================
+ERROR STATES
+============================================================================ */
+
+.mts-error {
+  color: var(--mts-danger-red);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.mts-form-input-error {
+  border-color: var(--mts-danger-red);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+/* ============================================================================
+FILTER DRAWER STYLES
+============================================================================ */
+
+.filter-drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.filter-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  animation: slideInRight 0.3s ease-in-out;
+  overflow-y: auto;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.filter-drawer-closing {
+  animation: slideOutRight 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .filter-drawer {
+    width: 100%;
+  }
+}
+
+/* ============================================================================
+OTHER VIEWS PLACEHOLDER
+============================================================================ */
+
+.mts-other-views {
+  background-color: var(--mts-white);
+  border-radius: var(--mts-radius-xl);
+  padding: 2rem;
+  box-shadow: var(--mts-shadow-sm);
+  border: 1px solid var(--mts-gray-200);
+}
+
+.coming-soon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  text-align: center;
+}
+
+.coming-soon-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.coming-soon-content svg {
+  width: 80px;
+  height: 80px;
+  color: var(--mts-gray-300);
+}
+
+.coming-soon-content h3 {
+  font-size: 1.5rem;
+  color: var(--mts-gray-800);
+  margin: 0;
+}
+
+.coming-soon-content p {
+  color: var(--mts-gray-600);
+  margin: 0;
+}
+
+/* ============================================================================
+UTILITY CLASSES
+============================================================================ */
+
+.mts-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.mts-hidden {
+  display: none !important;
+}
+
+.mts-visible {
+  display: block !important;
+}
+
+/* ============================================================================
+ANIMATION UTILITIES
+============================================================================ */
+
+.mts-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.mts-slide-in {
+  animation: slideInRight 0.3s ease-in-out;
+}
+
+/* ============================================================================
+BROWSER COMPATIBILITY AND FONT SMOOTHING
+============================================================================ */
+
+.mts-employee-table,
+.mts-emp-modal-content {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mts-container * {
+  box-sizing: border-box;
+}
+
+/* ============================================================================
+SCROLLBAR STYLING (Optional - Browser Support Varies)
+============================================================================ */
+
+.mts-emp-modal-body::-webkit-scrollbar,
+.mts-employee-table-table-rows::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mts-emp-modal-body::-webkit-scrollbar-track,
+.mts-employee-table-table-rows::-webkit-scrollbar-track {
+  background: var(--mts-gray-100);
+  border-radius: 4px;
+}
+
+.mts-emp-modal-body::-webkit-scrollbar-thumb,
+.mts-employee-table-table-rows::-webkit-scrollbar-thumb {
+  background: var(--mts-gray-300);
+  border-radius: 4px;
+}
+
+.mts-emp-modal-body::-webkit-scrollbar-thumb:hover,
+.mts-employee-table-table-rows::-webkit-scrollbar-thumb:hover {
+  background: var(--mts-gray-400);
+}
+
+/* ============================================================================
+PRINT STYLES
+============================================================================ */
+
+@media print {
+  .mts-emp-modal-overlay,
+  .mts-emp-modal-content {
+    display: none;
+  }
+
+  .mts-action-btn,
+  .mts-add-employee-btn,
+  .mts-bulk-approve-btn,
+  .mts-bulk-reject-btn {
+    display: none;
+  }
+
+  .mts-employee-table {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+}
+
+/* ============================================================================
+END OF MANAGERDASHBOARD.CSS
+============================================================================ */
+
+.notification-bell-container {
+  position: relative;
+  display: inline-block;
+}
+
+.notification-bell-btn {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #6b7280;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-bell-btn:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.notification-bell-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background-color: #ef4444;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+.notification-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+.notification-panel {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 400px;
+  max-height: 600px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.notification-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.notification-count-badge {
+  background: #ef4444;
+  color: white;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.notification-close-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #6b7280;
+  transition: all 0.2s ease;
+}
+
+.notification-close-btn:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.notification-list {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 450px;
+}
+
+.notification-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f3f4f6;
+  /* border-left: 4px solid #569d9a; */
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.notification-item:hover {
+  background: #f9fafb;
+}
+
+.notification-item.high {
+  border-left-color: #ef4444;
+}
+
+.notification-item.medium {
+  border-left-color: #f59e0b;
+}
+
+.notification-item.low {
+  border-left-color: #10b981;
+}
+
+.notification-icon-container {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.notification-icon {
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.notification-icon.external {
+  color: #3b82f6;
+  background: #dbeafe;
+}
+
+.notification-icon.project {
+  color: #f59e0b;
+  background: #fef3c7;
+}
+
+.notification-icon.h1b {
+  color: #ef4444;
+  background: #fee2e2;
+}
+
+.notification-icon.balance {
+  color: #dc2626;
+  background: #fecaca;
+}
+
+.notification-icon.default {
+  color: #6b7280;
+  background: #f3f4f6;
+}
+
+.notification-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.notification-message {
+  font-weight: 500;
+  color: #1f2937;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.notification-details {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.notification-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.notification-item-count {
+  background: #e5e7eb;
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.notification-action-btn {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.notification-action-btn:hover {
+  background: #059669;
+}
+
+.notification-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  color: #9ca3af;
+}
+
+.notification-empty p {
+  margin: 12px 0 4px 0;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.notification-empty span {
+  font-size: 14px;
+}
+
+.notification-footer {
+  padding: 12px 20px;
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafb;
+  text-align: center;
+}
+
+.notification-clear-all {
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.notification-clear-all:hover {
+  color: #374151;
+}
+
+@media (max-width: 768px) {
+  .notification-panel {
+    width: 90vw;
+    right: 5vw;
+    left: 5vw;
+  }
+}
+
+
+/* ============================================================================
+INVOICE TABLE ALIGNMENT FIX - ADD TO ManagerDashboard.css
+============================================================================ */
+
+/* Invoice table header and rows alignment */
+.mts-invoice-view .mts-employee-table-table-header {
+  grid-template-columns: 1.2fr 1.5fr 0.9fr 0.9fr 0.8fr 0.8fr;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+.mts-invoice-view .mts-employee-table-table-row {
+  grid-template-columns: 1.2fr 1.5fr 0.9fr 0.9fr 0.8fr 0.8fr;
+  gap: 1.5rem;
+  padding: 1.25rem 2rem;
+}
+
+/* HEADER TEXT ALIGNMENT FOR INVOICE */
+.mts-invoice-view .mts-employee-table-table-header > div:nth-child(1) {
+  text-align: left;
+}
+
+.mts-invoice-view .mts-employee-table-table-header > div:nth-child(2) {
+  text-align: left;
+}
+
+.mts-invoice-view .mts-employee-table-table-header > div:nth-child(3) {
+  text-align: center;
+}
+
+.mts-invoice-view .mts-employee-table-table-header > div:nth-child(4) {
+  text-align: center;
+}
+
+.mts-invoice-view .mts-employee-table-table-header > div:nth-child(5) {
+  text-align: center;
+}
+
+.mts-invoice-view .mts-employee-table-table-header > div:nth-child(6) {
+  text-align: right;
+}
+
+/* COLUMN 1: Invoice Number & Details - LEFT ALIGNED */
+.mts-invoice-view .mts-employee-table-table-row > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  text-align: left;
+}
+
+.mts-invoice-view .mts-employee-table-table-row > div:nth-child(1) .mts-employee-name-btn {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.mts-invoice-view .mts-employee-table-table-row > div:nth-child(1) .mts-contact-info {
+  font-size: 0.8rem;
+  color: var(--mts-gray-600);
+}
+
+/* COLUMN 2: Contractor - LEFT ALIGNED */
+.mts-invoice-view .mts-employee-table-table-row > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  text-align: left;
+}
+
+.mts-invoice-view .mts-employee-table-table-row > div:nth-child(2) .mts-contact-email {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.mts-invoice-view .mts-employee-table-table-row > div:nth-child(2) .mts-contact-phone {
+  font-size: 0.875rem;
+  color: var(--mts-danger-red);
+}
+
+/* COLUMN 3: Amount - CENTER ALIGNED */
+.mts-invoice-view .mts-employee-table-table-row > div:nth-child(3) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  color: var(--mts-primary-green);
+  white-space: nowrap;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+/* COLUMN 4: Due Date - CENTER ALIGNED */
+.mts-invoice-view .mts-employee-table-table-row > div:nth-child(4) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0.875rem;
+  gap: 0.25rem;
+}
+
+.mts-invoice-view .mts-employee-table-table-row > div:nth-child(4) > div:first-child {
+  white-space: nowrap;
+}
+
+.mts-invoice-view .mts-employee-table-table-row > div:nth-child(4) > div:last-child {
+  font-size: 0.75rem;
+  color: var(--mts-gray-500);
+}
+
+/* COLUMN 5: Status - CENTER ALIGNED */
+.mts-invoice-view .mts-employee-table-table-row > div:nth-child(5) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mts-invoice-view .mts-employee-table-table-row > div:nth-child(5) span {
+  white-space: nowrap;
+  margin: 0 auto;
+}
+
+/* COLUMN 6: Actions - RIGHT ALIGNED */
+.mts-invoice-view .mts-employee-table-table-row > div:nth-child(6) {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+/* Responsive adjustments for Invoice table */
+@media (max-width: 1280px) {
+  .mts-invoice-view .mts-employee-table-table-header {
+    grid-template-columns: 1.1fr 1.4fr 0.85fr 0.85fr 0.75fr 0.75fr;
+    gap: 1.2rem;
+    padding: 0.875rem 1.5rem;
+  }
+
+  .mts-invoice-view .mts-employee-table-table-row {
+    grid-template-columns: 1.1fr 1.4fr 0.85fr 0.85fr 0.75fr 0.75fr;
+    gap: 1.2rem;
+    padding: 1rem 1.5rem;
+  }
+
+  /* C2C responsive adjustments */
+  .mts-c2c-view .mts-employee-table-table-header {
+    grid-template-columns: 1.2fr 1.4fr 0.95fr 1.2fr 0.85fr 0.85fr;
+    gap: 1rem;
+    padding: 0.875rem 1.5rem;
+  }
+
+  .mts-c2c-view .mts-employee-table-table-row {
+    grid-template-columns: 1.2fr 1.4fr 0.95fr 1.2fr 0.85fr 0.85fr;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mts-invoice-view .mts-employee-table-table-header {
+    grid-template-columns: 1fr 1.3fr 0.8fr 0.8fr 0.7fr 0.7fr;
+    gap: 1rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.7rem;
+  }
+
+  .mts-invoice-view .mts-employee-table-table-row {
+    grid-template-columns: 1fr 1.3fr 0.8fr 0.8fr 0.7fr 0.7fr;
+    gap: 1rem;
+    padding: 0.875rem 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mts-invoice-view .mts-employee-table-table-header {
+    display: none;
+  }
+
+  .mts-invoice-view .mts-employee-table-table-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--mts-gray-200);
+    border-radius: var(--mts-radius-md);
+    margin-bottom: 1rem;
+    background-color: var(--mts-white);
+  }
+
+  .mts-invoice-view .mts-employee-table-table-row > div::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--mts-gray-500);
+    margin-bottom: 0.25rem;
+  }
+
+  .mts-invoice-view .mts-employee-table-table-row > div:nth-child(1)::before {
+    content: "Invoice Number & Details";
+  }
+
+  .mts-invoice-view .mts-employee-table-table-row > div:nth-child(2)::before {
+    content: "Contractor";
+  }
+
+  .mts-invoice-view .mts-employee-table-table-row > div:nth-child(3)::before {
+    content: "Amount";
+  }
+
+  .mts-invoice-view .mts-employee-table-table-row > div:nth-child(4)::before {
+    content: "Due Date";
+  }
+
+  .mts-invoice-view .mts-employee-table-table-row > div:nth-child(5)::before {
+    content: "Status";
+  }
+
+  .mts-invoice-view .mts-employee-table-table-row > div:nth-child(6)::before {
+    content: "Actions";
+  }
+
+  .mts-invoice-view .mts-employee-table-table-row > div:nth-child(3) {
+    justify-content: flex-start;
+  }
+
+  .mts-invoice-view .mts-employee-table-table-row > div:nth-child(4) {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .mts-invoice-view .mts-employee-table-table-row > div:nth-child(5) {
+    justify-content: flex-start;
+  }
+
+  .mts-invoice-view .mts-employee-table-table-row > div:nth-child(6) {
+    justify-content: flex-start;
+  }
+}
+
+/* ============================================================================
+NOTIFICATION BADGE BLINKING ANIMATION
+============================================================================ */
+
+
+/* Apply blinking effect to notification badge */
+.notification-bell-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background-color: #ef4444;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  
+}
+
+/* Alternative pulse-scale effect (uncomment to use instead) */
+/* 
+.notification-bell-badge {
+  animation: pulse-scale 1.5s infinite;
+}
+*/
+
+/* Glow effect around badge */
+.notification-bell-badge::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  border-radius: 50%;
+  border: 2px solid white;
+  opacity: 0;
+}
+
+/* Footer actions alignment */
+.mts-emp-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid var(--mts-gray-200);
+  background-color: var(--mts-gray-50);
+  border-radius: 0 0 1rem 1rem;
+}
+
+/* Step Indicator Styles */
+.mts-step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
+  background-color: #f8fafc;
+  border-bottom: 1px solid var(--mts-gray-200);
+  position: relative;
+}
+
+.mts-step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+
+.mts-step-item::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: var(--mts-gray-200);
+  z-index: -1;
+}
+
+.mts-step-item:last-child::after {
+  display: none;
+}
+
+.mts-step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--mts-white);
+  border: 2px solid var(--mts-gray-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--mts-gray-400);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.mts-step-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--mts-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  transition: all 0.3s ease;
+}
+
+.mts-step-item.active .mts-step-number {
+  border-color: var(--mts-primary-green);
+  color: var(--mts-primary-green);
+  background-color: var(--mts-white);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+}
+
+.mts-step-item.active .mts-step-label {
+  color: var(--mts-gray-900);
+}
+
+.mts-step-item.active ~ .mts-step-item .mts-step-number {
+  border-color: var(--mts-gray-200);
+  color: var(--mts-gray-300);
+}
+
+/* Modal Body spacing */
+.mts-emp-modal-body {
+  padding: 2rem;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* Form Layouts within Modal */
+.mts-emp-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mts-emp-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.mts-emp-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--mts-gray-800);
+  margin: 1.5rem 0 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--mts-gray-100);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mts-emp-checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: var(--mts-gray-50);
+  border-radius: var(--mts-radius-md);
+  border: 1px solid var(--mts-gray-200);
+}
+
+.mts-emp-checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--mts-gray-700);
+  cursor: pointer;
+}
+
+.mts-emp-checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--mts-primary-green);
+}
+
+.mts-generate-id-btn {
+  padding: 0.5rem 1rem;
+  background-color: var(--mts-gray-100);
+  border: 1px solid var(--mts-gray-300);
+  border-radius: var(--mts-radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--mts-gray-700);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.mts-generate-id-btn:hover {
+  background-color: var(--mts-gray-200);
+  border-color: var(--mts-gray-400);
+}
+
+.mts-password-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.mts-password-input button {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--mts-gray-400);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.mts-password-input button:hover {
+  color: var(--mts-gray-600);
+}
+
+.mts-emp-auth-fields {
+  background-color: #f0fdf4;
+  border: 1px solid #bcf0da;
+  border-radius: var(--mts-radius-lg);
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.mts-emp-auth-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: #03543f;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mts-emp-select {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+  line-height: 1.5;
+  background-color: white;
+  width: 100%;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  appearance: auto !important;
+}
+
+.mts-emp-select:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.mts-emp-checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 42px;
+}
+
+.mts-emp-checkbox-group:hover {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.mts-emp-checkbox-group input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  cursor: pointer;
+  accent-color: #10b981;
+  margin: 0;
+}
+
+.mts-emp-checkbox-group label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #334155;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.mts-emp-section-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #03543f;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 1.5rem 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  grid-column: 1 / -1;
+}
+
+/* Overriding gaps and alignments for better density */
+.mts-emp-form-grid {
+  gap: 0.75rem !important;
+}
+
+.mts-emp-form-row {
+  gap: 1rem !important;
+}
+
+.mts-emp-modal-body {
+  padding: 1.25rem 2rem !important;
+}
+
+.mts-emp-checkbox-group {
+  width: 100%;
+  justify-content: flex-start;
+  margin-top: 0;
+  height: 42px;
+}
+
+.mts-emp-section-title {
+  margin: 1rem 0 0.5rem 0 !important;
+  padding-bottom: 0.25rem !important;
+}
+
+.mts-emp-form-group {
+  gap: 0.25rem !important;
+}
+
+.mts-generate-id-btn {
+  padding: 0.5rem 1rem !important;
+  font-size: 0.75rem !important;
+}
+
+
+/* Pagination Styles */
+.mts-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid var(--mts-gray-100);
+  background-color: var(--mts-white);
+}
+
+.mts-pagination-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--mts-white);
+  border: 1px solid var(--mts-gray-200);
+  border-radius: var(--mts-radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--mts-gray-600);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mts-pagination-btn:hover:not(:disabled) {
+  background-color: var(--mts-gray-50);
+  color: var(--mts-gray-800);
+  border-color: var(--mts-gray-300);
+}
+
+.mts-pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--mts-gray-50);
+}
+
+.mts-pagination-info {
+  font-size: 0.875rem;
+  color: var(--mts-gray-500);
+  font-weight: 500;
+}
+
+/* Robust Task Truncation */
+.mts-task-cell {
+  max-width: 300px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: block;
+  cursor: help;
+}
+

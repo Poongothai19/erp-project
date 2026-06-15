@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fec35f2a.css",
+    "main.js": "/static/js/main.a3b92609.js",
+    "static/js/239.37618f89.chunk.js": "/static/js/239.37618f89.chunk.js",
+    "static/js/977.6e17b5c8.chunk.js": "/static/js/977.6e17b5c8.chunk.js",
+    "static/js/732.8dee63ef.chunk.js": "/static/js/732.8dee63ef.chunk.js",
+    "static/js/453.68693753.chunk.js": "/static/js/453.68693753.chunk.js",
+    "static/media/img.png": "/static/media/img.96f509567777b4da797f.png",
+    "static/media/prophecy-logo.png": "/static/media/prophecy-logo.c5a95ac5e9e286e1e3a4.png",
+    "static/media/DISENAILOGO (1).png": "/static/media/DISENAILOGO (1).b122173dde6ab3f95e79.png",
+    "static/media/prophecy-logo2.png": "/static/media/prophecy-logo2.71fe7271cacd281849ee.png",
+    "static/media/PROPHECY-LOGO-DARK.png": "/static/media/PROPHECY-LOGO-DARK.f886ed6ade3387e26cbb.png",
+    "index.html": "/index.html",
+    "main.fec35f2a.css.map": "/static/css/main.fec35f2a.css.map",
+    "main.a3b92609.js.map": "/static/js/main.a3b92609.js.map",
+    "239.37618f89.chunk.js.map": "/static/js/239.37618f89.chunk.js.map",
+    "977.6e17b5c8.chunk.js.map": "/static/js/977.6e17b5c8.chunk.js.map",
+    "732.8dee63ef.chunk.js.map": "/static/js/732.8dee63ef.chunk.js.map",
+    "453.68693753.chunk.js.map": "/static/js/453.68693753.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fec35f2a.css",
+    "static/js/main.a3b92609.js"
+  ]
+}

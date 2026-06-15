@@ -1,0 +1,457 @@
+/* ============================================================
+   ADD MODAL CUSTOM STYLES - mp- prefix
+   These styles only affect the add/edit candidate modal
+   ============================================================ */
+
+.mp-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.mp-container {
+  background-color: white;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.mp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 10;
+}
+
+.mp-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.mp-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.mp-close-btn:hover {
+  color: #1e293b;
+  background-color: #f1f5f9;
+}
+
+.mp-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 12px;
+}
+
+/* Tabs */
+.mp-tabs-container {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 4px 0 8px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.mp-tab-btn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 12px;
+  background: #f1f5f9;
+  color: #475569;
+  transition: all 0.15s ease;
+}
+
+.mp-tab-btn:hover {
+  background: #e2e8f0;
+}
+
+.mp-tab-btn-active {
+  background: #229C8B !important;
+  color: white !important;
+}
+
+/* Sections */
+.mp-section {
+  padding: 16px 0;
+}
+
+/* Field layouts */
+.mp-row-3col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.mp-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* Form fields */
+.mp-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mp-field-full {
+  grid-column: 1 / -1;
+}
+
+.mp-field-flex2 {
+  flex: 2;
+}
+
+.mp-field-flex1 {
+  flex: 1;
+}
+
+.mp-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #475569;
+}
+
+.mp-input,
+.mp-select,
+.mp-textarea {
+  height: 36px;
+  padding: 8px 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: inherit;
+  transition: all 0.15s ease;
+  background-color: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mp-input:focus,
+.mp-select:focus,
+.mp-textarea:focus {
+  outline: none;
+  border-color: #229C8B;
+  box-shadow: 0 0 0 3px rgba(34, 156, 139, 0.1);
+}
+
+.mp-select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 14px;
+  padding-right: 32px;
+  appearance: none;
+}
+
+.mp-textarea {
+  height: auto;
+  min-height: 60px;
+  resize: vertical;
+}
+
+.mp-error-message {
+  margin-top: 2px;
+  font-size: 11px;
+  color: #ef4444;
+}
+
+/* Resume upload */
+.mp-resume-section {
+  background: #f8fafc;
+  border-radius: 6px;
+  padding: 12px;
+  margin: 4px 0;
+}
+
+.mp-file-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.mp-file-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: white;
+  border: 1px dashed #cbd5e1;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #475569;
+  transition: all 0.15s ease;
+}
+
+.mp-file-label:hover {
+  border-color: #229C8B;
+  color: #229C8B;
+  background: rgba(34, 156, 139, 0.02);
+}
+
+.mp-file-input {
+  display: none;
+}
+
+.mp-file-info {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.mp-file-name {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.mp-file-size {
+  color: #94a3b8;
+  margin-left: 4px;
+}
+
+/* Skills */
+.mp-hint {
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.mp-skill-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* Cards for dynamic sections */
+.mp-exp-card,
+.mp-edu-card,
+.mp-cert-card {
+  background: #f8fafc;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.mp-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.mp-card-header strong {
+  font-size: 13px;
+  color: #1e293b;
+}
+
+.mp-date-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mp-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+/* Buttons */
+.mp-delete-btn {
+  color: #ef4444;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.mp-delete-btn:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.mp-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-top: 4px;
+}
+
+.mp-add-btn:hover {
+  background: #f8fafc;
+  border-color: #229C8B;
+  color: #229C8B;
+}
+
+/* Footer */
+.mp-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid #e2e8f0;
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+  margin-top: 8px;
+}
+
+.mp-btn-primary,
+.mp-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: none;
+}
+
+.mp-btn-primary {
+  background-color: #229C8B;
+  color: white;
+}
+
+.mp-btn-primary:hover {
+  background-color: #187e71;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(34, 156, 139, 0.3);
+}
+
+.mp-btn-secondary {
+  background-color: white;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.mp-btn-secondary:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+/* Scrollbar */
+.mp-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mp-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.mp-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.mp-container::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mp-row-3col,
+  .mp-row-2col {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .mp-footer {
+    flex-direction: column-reverse;
+  }
+  
+  .mp-btn-primary,
+  .mp-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .mp-skill-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .mp-date-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .mp-checkbox-label {
+    margin-top: 4px;
+  }
+}
+
+
+/* Document Cards */
+.mp-doc-card {
+  background: #f8fafc;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.mp-doc-card .mp-row-2col {
+  margin-bottom: 12px;
+}
+
+.mp-doc-card .mp-file-container {
+  margin-top: 4px;
+}

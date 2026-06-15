@@ -1,0 +1,64 @@
+/* CandidateEditView.css - scoped global styles */
+
+.client-edit-view-container {
+  max-width: 640px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #f9fafb;
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.client-edit-view-container:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.client-edit-view-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #111827;
+}
+
+.client-edit-view-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.client-edit-view-label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.client-edit-view-input {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 2px;
+  background-color: #ffffff;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.client-edit-view-input:focus {
+  outline: none;
+  border-color: #019d88;;
+ 
+}
+
+.client-edit-view-save-btn {
+  background: linear-gradient(180deg, #019d88, #0d2e26);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.client-edit-view-save-btn:hover {
+  background: linear-gradient(180deg, #019d88, #0d2e26);
+}

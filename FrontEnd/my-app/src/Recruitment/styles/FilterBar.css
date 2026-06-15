@@ -1,0 +1,101 @@
+/* Filter Section */
+.filter-section {
+  background: #fff;
+  padding: 16px;
+  width: 100%;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* Filter List */
+.filters-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Filter Item */
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+/* Checkbox & Label Container */
+.filter-label-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between checkbox and text */
+}
+
+/* Checkbox Container */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Checkbox Styling */
+.checkbox-container input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #087f5b;
+  cursor: pointer;
+}
+
+/* Label Styling */
+.filter-label {
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Active Filter Item */
+.filter-item.active {
+  background: #f0f8ff;
+  border-left: 4px solid #019d88;
+}
+
+/* Filter Controls */
+.filter-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 28px;
+  margin-top: 5px;
+}
+
+.filter-controls label {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.filter-controls select,
+.filter-controls input {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Apply Filters Button */
+.apply-filters-btn {
+  margin-top: 12px;
+  width: 100%;
+  background: linear-gradient(180deg, #019d88, #0d2e26);
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.apply-filters-btn:hover {
+  background: linear-gradient(180deg, #019d88, #0d2e26);
+}

@@ -1,0 +1,231 @@
+.new-group-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.group-inputs {
+  margin-bottom: 20px;
+}
+
+.group-inputs label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.group-inputs input,
+.group-inputs textarea {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+.user-selection-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.user-list,
+.selected-list {
+  width: 40%;
+}
+
+.arrow-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.arrow-buttons button {
+  padding: 6px 10px;
+  font-size: 18px;
+}
+
+.user-list-container {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.user-card {
+  display: flex;
+  gap: 10px;
+  border: 1px solid #ccc;
+  padding: 6px;
+  margin-bottom: 8px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.user-card img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.user-card.selected {
+  justify-content: space-between;
+}
+
+.user-card.selected button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.action-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.ok-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.group-cancel-btn {
+  background: #eeeded;
+    color: #7a1717;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.dropdown-container {
+  margin-top: 20px;
+}
+
+.user-dropdown {
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+  margin-top: 10px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #f0fdf4;
+}
+
+.profile-pic {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+/* Add these styles to your NewGroup.css file */
+
+/* User profile image styling */
+.user-img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.user-img {
+  width: 32px;          /* Decreased from the original 40px */
+  height: 32px;         /* Decreased from the original 40px */
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.2s ease;
+}
+
+.user-img:hover {
+  transform: scale(1.1);  /* Slight zoom effect on hover */
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+/* Ensure the user item layout accommodates smaller images */
+.user-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;         /* Slightly reduced padding */
+  margin-bottom: 8px;   /* Slightly reduced margin */
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  background-color: white;
+}
+
+/* Adjust the text size for better proportion with smaller images */
+.user-info .user-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.user-info .user-email {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.user-email {
+  font-size: 12px;
+  color: #888;
+}
+
+.selected-users {
+  margin-top: 20px;
+}
+
+.selected-users ul {
+  list-style: none;
+  padding: 0;
+}
+
+.selected-users li {
+  padding: 4px 0;
+}
+.dropdown {
+  padding: 5px 10px;
+  margin-bottom: 20px;
+}
+.group-save-btn {
+  background: linear-gradient(180deg, #019d88, #0d2e26);
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

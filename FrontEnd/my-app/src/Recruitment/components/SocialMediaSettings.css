@@ -1,0 +1,276 @@
+/* ============================
+   Social Media Settings Page
+   Prefix: sms- (unique, no conflicts)
+   Theme: Green (#009688)
+   ============================ */
+
+.sms-container {
+  padding: 1rem 1.2rem;
+  /* max-width: 1300px; */
+  margin: 0 auto;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.sms-header {
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid #e0f2ef;
+}
+
+.sms-header h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #009688;
+  margin-bottom: 0.15rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sms-header p {
+  font-size: 0.8rem;
+  color: #777;
+  margin: 0;
+}
+
+/* Alert Messages */
+.sms-alert {
+  padding: 0.5rem 0.9rem;
+  border-radius: 5px;
+  margin-bottom: 0.8rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.82rem;
+  animation: smsSlideIn 0.3s ease;
+}
+
+.sms-alert-success {
+  background-color: #e8f5f0;
+  color: #009688;
+  border: 1px solid #b2dfdb;
+}
+
+.sms-alert-error {
+  background-color: #fdecea;
+  color: #c62828;
+  border: 1px solid #f5c6cb;
+}
+
+/* Cards Grid */
+.sms-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+/* Card Base */
+.sms-card {
+  background: #fff;
+  border: 1px solid #dcedc8;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0, 150, 136, 0.08);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.sms-card:hover {
+  box-shadow: 0 3px 12px rgba(0, 150, 136, 0.15);
+}
+
+/* Card Headers */
+.sms-card-header {
+  padding: 0.7rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.sms-linkedin-card .sms-card-header {
+  background: #009688;
+  color: white;
+}
+
+.sms-instagram-card .sms-card-header {
+  background: #009688;
+  color: white;
+}
+
+.sms-facebook-card .sms-card-header {
+  background: #009688;
+  color: white;
+}
+
+.sms-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Status Badge */
+.sms-status-badge {
+  padding: 0.15rem 0.55rem;
+  border-radius: 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.sms-status-connected { color: #009688; }
+.sms-status-pending   { color: #757575; }
+.sms-status-error     { color: #e53935; }
+
+/* Toggle Button */
+.sms-toggle-btn {
+  margin-left: 8px;
+  padding: 3px 9px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: white;
+  transition: opacity 0.2s;
+}
+
+.sms-toggle-btn:hover { opacity: 0.85; }
+.sms-toggle-disable   { background-color: #e53935; }
+.sms-toggle-enable    { background-color: #43a047; }
+
+/* Card Body */
+.sms-card-body {
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Field Groups */
+.sms-field-group {
+  margin-bottom: 0.5rem;
+}
+
+.sms-field-row {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.sms-field-row .sms-field-group {
+  flex: 1;
+}
+
+/* Labels */
+.sms-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #555;
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Inputs */
+.sms-input {
+  width: 100%;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid #c8e6c9;
+  border-radius: 5px;
+  background-color: #f9fff9;
+  font-size: 0.82rem;
+  color: #2d3748;
+  transition: all 0.18s ease;
+  box-sizing: border-box;
+  height: 32px;
+  font-family: inherit;
+}
+
+.sms-input:focus {
+  outline: none;
+  border-color: #009688;
+  background-color: #fff;
+  box-shadow: 0 0 0 2px rgba(0, 150, 136, 0.15);
+}
+
+.sms-input:disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+  color: #999;
+}
+
+/* Save Buttons */
+.sms-save-btn {
+  margin-top: 0.6rem;
+  width: 100%;
+  padding: 0.45rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 0.3rem;
+  font-family: inherit;
+}
+
+.sms-save-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.sms-save-btn:active { transform: scale(0.98); }
+
+.sms-linkedin-btn   { background-color: #009688; }
+.sms-instagram-btn  { background: #009688; }
+.sms-facebook-btn   { background-color: #009688; }
+
+.sms-linkedin-btn:hover:not(:disabled)  { background-color: #006097; box-shadow: 0 2px 8px rgba(0,119,181,0.3); }
+.sms-instagram-btn:hover:not(:disabled) { filter: brightness(1.08); box-shadow: 0 2px 8px rgba(188,24,136,0.3); }
+.sms-facebook-btn:hover:not(:disabled)  { background-color: #166fe5; box-shadow: 0 2px 8px rgba(24,119,242,0.3); }
+
+/* Last Verified */
+.sms-last-verified {
+  text-align: center;
+  font-size: 0.7rem;
+  color: #90a4ae;
+  margin-top: 0.2rem;
+}
+
+/* Loading State */
+.sms-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+  font-size: 1rem;
+  color: #009688;
+  font-weight: 600;
+}
+
+/* Animation */
+@keyframes smsSlideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sms-field-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .sms-container {
+    padding: 0.6rem;
+  }
+  .sms-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+}

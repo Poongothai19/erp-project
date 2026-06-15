@@ -1,0 +1,329 @@
+/* ============================================================
+   FILTER MODAL — Advanced AND/OR Filter
+   fm- prefix
+   ============================================================ */
+
+/* ── Overlay ── */
+.fm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fm-fadeIn 0.2s ease;
+}
+
+@keyframes fm-fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Modal ── */
+.fm-modal {
+  background: #fff;
+  border-radius: 12px;
+  width: 680px;
+  max-width: 92vw;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2), 0 4px 16px rgba(0, 0, 0, 0.1);
+  animation: fm-slideUp 0.25s ease;
+}
+
+@keyframes fm-slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Header ── */
+.fm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.fm-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+.fm-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fm-clear-btn {
+  background: none;
+  border: 1.5px solid #ef4444;
+  color: #ef4444;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.fm-clear-btn:hover {
+  background: #fef2f2;
+}
+
+.fm-close-btn {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  transition: all 0.15s;
+}
+.fm-close-btn:hover {
+  background: #f3f4f6;
+  color: #111;
+}
+
+/* ── Body ── */
+.fm-body {
+  padding: 20px 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* ── Filter Row ── */
+.fm-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.fm-field-group {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.fm-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.fm-select,
+.fm-input {
+  height: 40px;
+  padding: 0 12px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-family: inherit;
+  color: #111827;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.fm-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+  cursor: pointer;
+}
+
+.fm-select:focus,
+.fm-input:focus {
+  border-color: #229C8B;
+  box-shadow: 0 0 0 3px rgba(34, 156, 139, 0.12);
+}
+
+.fm-select option[value=""] {
+  color: #9ca3af;
+}
+
+/* Delete button */
+.fm-delete-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 40px;
+  flex-shrink: 0;
+  background: none;
+  border: 1.5px solid #fecaca;
+  border-radius: 8px;
+  color: #ef4444;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.fm-delete-btn:hover {
+  background: #fef2f2;
+  border-color: #ef4444;
+}
+
+/* ── Logic Row (AND / OR) ── */
+.fm-logic-row {
+  display: flex;
+  align-items: center;
+  padding: 4px 0;
+  margin: 2px 0;
+}
+
+.fm-logic-wrapper {
+  position: relative;
+}
+
+.fm-logic-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f766e;
+  background: #f0fdfa;
+  border: 1.5px solid #99f6e4;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.fm-logic-btn:hover {
+  background: #ccfbf1;
+  border-color: #5eead4;
+}
+
+.fm-logic-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+  min-width: 80px;
+  overflow: hidden;
+  animation: fm-dropIn 0.15s ease;
+}
+
+@keyframes fm-dropIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fm-logic-option {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.fm-logic-option:hover {
+  background: #f0fdf4;
+  color: #229C8B;
+}
+.fm-logic-option.active {
+  background: #ecfdf5;
+  color: #229C8B;
+  font-weight: 700;
+}
+
+/* ── Add Filter Button ── */
+.fm-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 7px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #0f766e;
+  background: none;
+  border: 1.5px dashed #99f6e4;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.fm-add-btn:hover {
+  background: #f0fdfa;
+  border-color: #5eead4;
+  color: #0d9488;
+}
+
+/* ── Footer ── */
+.fm-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.fm-cancel-btn {
+  padding: 9px 22px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #374151;
+  background: #fff;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.fm-cancel-btn:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.fm-apply-btn {
+  padding: 9px 28px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #fff;
+  background: #229C8B;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.fm-apply-btn:hover {
+  background: #1a8a7a;
+  box-shadow: 0 4px 12px rgba(34, 156, 139, 0.3);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .fm-modal {
+    width: 95vw;
+  }
+  .fm-row {
+    flex-wrap: wrap;
+  }
+  .fm-field-group {
+    min-width: 120px;
+  }
+}

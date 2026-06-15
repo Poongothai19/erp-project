@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&family=Exo:wght@400;700&family=Julius+Sans+One&family=Poiret+One&family=Bitter:wght@400;700&family=Glegoo:wght@400;700&family=Baumans&family=Maven+Pro:wght@400;700&family=Josefin+Sans:wght@400;700&family=Nova+Square&family=Lato:wght@400;700&family=Francois+One&family=Fjord+One&family=Jockey+One&family=Arvo:wght@400;700&family=Cabin:wght@400;700&family=Capriola&family=Ubuntu:wght@400;700&family=Nunito:wght@400;700&family=Imprima&family=Josefin+Slab:wght@400;700&family=Amaranth:wght@400;700&family=Quattrocento+Sans:wght@400;700&family=Orbitron:wght@400;700&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif; /* Default font */
+}
+
+.share-tech { font-family: 'Share Tech', sans-serif; }
+.exo { font-family: 'Exo', sans-serif; }
+.julius-sans { font-family: 'Julius Sans One', sans-serif; }
+.poiret-one { font-family: 'Poiret One', sans-serif; }
+.bitter { font-family: 'Bitter', serif; }
+.glegoo { font-family: 'Glegoo', serif; }
+.baumans { font-family: 'Baumans', sans-serif; }
+.maven-pro { font-family: 'Maven Pro', sans-serif; }
+.josefin-sans { font-family: 'Josefin Sans', sans-serif; }
+.nova-square { font-family: 'Nova Square', sans-serif; }
+.lato { font-family: 'Lato', sans-serif; }
+.francois-one { font-family: 'Francois One', sans-serif; }
+.fjord-one { font-family: 'Fjord One', serif; }
+.jockey-one { font-family: 'Jockey One', sans-serif; }
+.arvo { font-family: 'Arvo', serif; }
+.cabin { font-family: 'Cabin', sans-serif; }
+.capriola { font-family: 'Capriola', sans-serif; }
+.ubuntu { font-family: 'Ubuntu', sans-serif; }
+.nunito { font-family: 'Nunito', sans-serif; }
+.imprima { font-family: 'Imprima', sans-serif; }
+.josefin-slab { font-family: 'Josefin Slab', serif; }
+.amaranth { font-family: 'Amaranth', sans-serif; }
+.quattrocento-sans { font-family: 'Quattrocento Sans', sans-serif; }
+.orbitron { font-family: 'Orbitron', sans-serif; }
+
+
+
+
+

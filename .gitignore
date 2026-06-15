@@ -1,0 +1,14 @@
+node_modules/
+.env
+.env.*
+BackEnd/node_modules/
+BackEnd/.env
+BackEnd/.env.*
+FrontEnd/node_modules/
+FrontEnd/.env
+FrontEnd/.env.*
+dice-extension/node_modules/
+dice-extension/.env
+dice-extension/.env.*
+.vercel
+*.log

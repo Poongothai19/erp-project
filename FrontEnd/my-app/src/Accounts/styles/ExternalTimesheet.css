@@ -1,0 +1,404 @@
+.ts-external-container 
+{
+  /* max-width: 900px; */
+  margin: 0 auto;
+  padding: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.ts-upload-wrapper {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+}
+
+.ts-header-section {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.ts-main-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+}
+
+.ts-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+.ts-dropzone {
+  border: 3px dashed #0a8080;
+  border-radius: 12px;
+  padding: 48px 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+  background: #f8fafc;
+  cursor: pointer;
+}
+
+.ts-dropzone:hover {
+  border-color: #0a8080;
+  background: #effffd;
+}
+
+.ts-dropzone-active {
+  border-color: #3b82f6;
+  background: #dbeafe;
+  transform: scale(1.02);
+}
+
+.ts-status-success {
+  border-color: #10b981;
+  background: #d1fae5;
+}
+
+.ts-status-error {
+  border-color: #ef4444;
+  background: #fee2e2;
+}
+
+.ts-dropzone-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.ts-upload-icon {
+  font-size: 64px;
+  margin-bottom: 8px;
+}
+
+.ts-dropzone-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.ts-or-text {
+  font-size: 14px;
+  color: #94a3b8;
+  margin: 4px 0;
+}
+
+.ts-browse-btn {
+  display: inline-block;
+  padding: 12px 32px;
+  background: #0a8080;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 16px;
+}
+
+.ts-browse-btn:hover {
+  background: #0a8080;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.ts-file-input-hidden {
+  display: none;
+}
+
+.ts-supported-formats {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 8px;
+}
+
+.ts-file-preview {
+  margin-top: 24px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.ts-preview-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 12px 0;
+}
+
+.ts-file-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.ts-file-icon {
+  font-size: 32px;
+}
+
+.ts-file-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ts-file-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+  word-break: break-word;
+}
+
+.ts-file-size {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.ts-remove-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ts-remove-btn:hover {
+  color: white;
+}
+
+.ts-action-buttons {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.ts-btn {
+  padding: 14px 40px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ts-btn-primary {
+  background: #0a8080;
+  color: white;
+}
+
+.ts-btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.ts-btn-primary:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.ts-history-section {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.ts-history-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 16px 0;
+}
+
+.ts-history-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.ts-history-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.ts-history-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.ts-history-icon {
+  font-size: 24px;
+}
+
+.ts-history-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ts-history-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+  word-break: break-word;
+}
+
+.ts-history-date {
+  font-size: 11px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+}
+
+.ts-history-client {
+  font-size: 11px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+}
+
+.ts-history-project {
+  font-size: 11px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+}
+
+.ts-history-status {
+  color: #10b981;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.ts-history-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.ts-download-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #0a8080;
+  padding: 6px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ts-download-btn:hover {
+  background: #e0f2f1;
+  color: #0a8080;
+}
+
+.ts-delete-btn {
+  border-radius: 4px;
+}
+
+.ts-instructions-panel {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ts-instructions-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 16px 0;
+}
+
+.ts-instructions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ts-instruction-item {
+  padding-left: 28px;
+  position: relative;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ts-instruction-item::before {
+  content: "•";
+  position: absolute;
+  left: 12px;
+  color: #3b82f6;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+@media (max-width: 1024px) {
+  .ts-history-list {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .ts-external-container {
+    padding: 16px;
+  }
+
+  .ts-upload-wrapper {
+    padding: 20px;
+  }
+
+  .ts-main-title {
+    font-size: 24px;
+  }
+
+  .ts-dropzone {
+    padding: 32px 16px;
+  }
+
+  .ts-upload-icon {
+    font-size: 48px;
+  }
+
+  .ts-history-list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .ts-history-list {
+    grid-template-columns: 1fr;
+  }
+}

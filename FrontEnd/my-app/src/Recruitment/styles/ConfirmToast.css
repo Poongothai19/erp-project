@@ -1,0 +1,55 @@
+/* Center toast messages */
+.Toastify__toast {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Style the confirmation container */
+.confirm-toast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Ensure buttons are properly spaced */
+.toast-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* General button styles */
+.confirm-toast button {
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Confirm button */
+.confirm-toast .confirm-btn {
+  background-color: #019d88;
+  color: white;
+}
+
+.confirm-toast .confirm-btn:hover {
+  background-color: #017d6f;
+}
+
+/* Cancel button */
+.confirm-toast .cancel-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.confirm-toast .cancel-btn:hover {
+  background-color: #c0392b;
+}

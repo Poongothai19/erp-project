@@ -1,0 +1,677 @@
+/* ============================================================
+   CANDIDATE TABLE — Premium UI
+   ct- prefix · table-layout: fixed · avatar initials · hover FX
+   ============================================================ */
+
+/* ── Container ── */
+.ct-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+/* ── Scrollable wrapper ── */
+.ct-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+  flex: 1;
+  background: #fff;
+  -webkit-overflow-scrolling: touch;
+}
+.ct-wrapper::-webkit-scrollbar { height: 5px; }
+.ct-wrapper::-webkit-scrollbar-track { background: #f1f5f9; }
+.ct-wrapper::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+
+/* ── Table ── */
+.ct-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: auto;
+  min-width: 1100px;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+}
+
+/* ── Head ── */
+.ct-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.ct-th {
+  padding: 0 16px;
+  height: 42px;
+  text-align: left;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  background: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+  user-select: none;
+  vertical-align: middle;
+}
+
+.ct-th--sortable {
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+}
+.ct-th--sortable:hover {
+  color: #229C8B;
+  background: #f0fdfa;
+}
+.ct-th--center { text-align: center; }
+
+.ct-th-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ── Column width hints (auto layout stretches to fill container) ── */
+.ct-table thead th:nth-child(1)  { min-width: 30px;  white-space: nowrap; }   /* Checkbox    */
+.ct-table thead th:nth-child(2)  { min-width: 110px; white-space: nowrap; }   /* ID          */
+.ct-table thead th:nth-child(3)  { min-width: 150px; white-space: nowrap; }   /* Name        */
+.ct-table thead th:nth-child(4)  { min-width: 170px; white-space: nowrap; }   /* Email       */
+.ct-table thead th:nth-child(5)  { min-width: 110px; white-space: nowrap; }   /* Phone       */
+.ct-table thead th:nth-child(6)  { min-width: 160px; white-space: nowrap; }   /* Job Title   */
+.ct-table thead th:nth-child(7)  { min-width: 50px;  white-space: nowrap; }   /* Exp         */
+.ct-table thead th:nth-child(8)  { min-width: 160px; white-space: nowrap; }   /* Skills      */
+.ct-table thead th:nth-child(9)  { min-width: 90px;  white-space: nowrap; }   /* Status      */
+.ct-table thead th:nth-child(10) { min-width: 85px;  white-space: nowrap; }   /* Work Type   */
+.ct-table thead th:nth-child(11) { min-width: 90px;  white-space: nowrap; }   /* Created     */
+.ct-table thead th:nth-child(12) { min-width: 90px;  white-space: nowrap; }   /* Actions     */
+
+/* ── Sort icons ── */
+.ct-sort-icon { flex-shrink: 0; }
+.ct-sort-icon--inactive { color: #cbd5e1; }
+.ct-sort-icon--active   { color: #229C8B; }
+
+/* ── Body rows ── */
+.ct-row {
+  transition: background 0.12s, box-shadow 0.12s;
+  position: relative;
+}
+.ct-row--alt {
+  background: #ffffff;
+}
+.ct-row:hover,
+.ct-row--hover {
+  background: #f0fdfa !important;
+}
+/* left accent bar on hover */
+.ct-row::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: transparent;
+  transition: background 0.15s;
+  border-radius: 0 3px 3px 0;
+}
+.ct-row:hover::after,
+.ct-row--hover::after {
+  background: #229C8B;
+}
+
+/* ── Body cells ── */
+.ct-td {
+  padding: 0 16px;
+  height: 52px;
+  font-size: 13px;
+  color: #334155;
+  vertical-align: middle;
+  border-bottom: 1px solid #f1f5f9;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ct-td--center { text-align: center; }
+
+/* ── Candidate Code (clickable) ── */
+.ct-code {
+  font-weight: 600;
+  color: #229C8B;
+  font-size: 12px;
+  font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+  cursor: pointer;
+  transition: color 0.15s;
+  letter-spacing: -0.01em;
+}
+.ct-code:hover {
+  color: #187e71;
+  text-decoration: underline;
+}
+
+/* ── Name cell with avatar ── */
+.ct-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.ct-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.ct-name-link {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 13px;
+  cursor: pointer;
+  transition: color 0.15s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ct-name-link:hover {
+  color: #229C8B;
+}
+
+/* ── Email ── */
+.ct-email {
+  color: #475569;
+  font-size: 12.5px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Phone ── */
+.ct-phone {
+  color: #475569;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* ── Job title ── */
+.ct-jobtitle {
+  font-weight: 500;
+  color: #334155;
+  font-size: 13px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Experience ── */
+.ct-exp {
+  font-weight: 700;
+  color: #334155;
+  font-size: 13px;
+}
+.ct-exp small {
+  font-weight: 500;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+/* ── Date ── */
+.ct-date {
+  font-size: 12px;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+/* ── No-ellipsis cells (Status, Work Type, Created) ── */
+.ct-td--no-clip {
+  overflow: visible !important;
+  text-overflow: unset !important;
+  white-space: nowrap;
+}
+
+/* ── N/A ── */
+.ct-na {
+  color: #d1d5db;
+}
+
+/* ============================================================
+   BADGES — Status & Work Type
+   ============================================================ */
+.ct-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  gap: 4px;
+}
+
+.ct-badge--green  { background: #dcfce7; color: #166534; }
+.ct-badge--blue   { background: #dbeafe; color: #1e40af; }
+.ct-badge--yellow { background: #fef3c7; color: #92400e; }
+.ct-badge--red    { background: #fee2e2; color: #991b1b; }
+.ct-badge--purple { background: #ede9fe; color: #5b21b6; }
+.ct-badge--gray   { background: #ffffff; color: #475569; border: 1px solid #e2e8f0; }
+.ct-badge--teal   { background: #ccfbf1; color: #115e59; }
+.ct-badge--orange { background: #ffedd5; color: #9a3412; }
+.ct-badge--indigo { background: #e0e7ff; color: #3730a3; }
+
+/* ============================================================
+   SKILL CHIPS + TOOLTIP
+   ============================================================ */
+
+/* Td must allow overflow for the tooltip */
+.ct-td--skills {
+  overflow: visible !important;
+}
+
+.ct-skills-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.ct-skills {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 4px;
+  align-items: center;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.ct-skill-chip {
+  display: inline-block;
+  max-width: 100px;
+  padding: 2px 8px;
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.55;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.ct-skill-chip:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.25);
+}
+
+.ct-skill-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 7px;
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  color: #0369a1;
+  border: 1px solid #7dd3fc;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ── Skills Tooltip (rendered via portal with position:fixed) ── */
+.ct-skills-tooltip {
+  min-width: 240px;
+  max-width: 360px;
+  background: #1e293b;
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28), 0 2px 6px rgba(0,0,0,0.12);
+  z-index: 99999;
+  animation: ct-tooltipFadeIn 0.15s ease-out;
+}
+
+/* Custom scrollbar for tooltip */
+.ct-skills-tooltip::-webkit-scrollbar {
+  width: 6px;
+}
+.ct-skills-tooltip::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05);
+  border-radius: 4px;
+}
+.ct-skills-tooltip::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 4px;
+}
+.ct-skills-tooltip::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+@keyframes ct-tooltipFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.ct-tooltip-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.ct-tooltip-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+}
+
+.ct-tooltip-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 18px;
+  background: rgba(34, 156, 139, 0.3);
+  color: #5eead4;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 0 6px;
+}
+
+.ct-tooltip-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.ct-tooltip-chip {
+  display: inline-block;
+  padding: 3px 10px;
+  background: rgba(255,255,255,0.08);
+  color: #e2e8f0;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.ct-tooltip-chip:hover {
+  background: rgba(34, 156, 139, 0.25);
+  color: #ffffff;
+  border-color: rgba(34, 156, 139, 0.4);
+}
+
+/* ============================================================
+   ACTION BUTTONS
+   ============================================================ */
+.ct-actions {
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.35;
+  transition: opacity 0.2s;
+}
+.ct-actions--visible,
+.ct-row:hover .ct-actions {
+  opacity: 1;
+}
+
+.ct-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.18s;
+  padding: 0;
+  color: #94a3b8;
+}
+.ct-action-btn:hover {
+  transform: translateY(-1px);
+}
+
+.ct-action-btn--view { color: #229C8B; }
+.ct-action-btn--view:hover {
+  background: rgba(34, 156, 139, 0.12);
+  color: #187e71;
+  box-shadow: 0 2px 8px rgba(34, 156, 139, 0.2);
+}
+
+.ct-action-btn--edit { color: #f59e0b; }
+.ct-action-btn--edit:hover {
+  background: rgba(245, 158, 11, 0.12);
+  color: #d97706;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+}
+
+.ct-action-btn--delete { color: #ef4444; }
+.ct-action-btn--delete:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);
+}
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+.ct-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+}
+.ct-empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+.ct-empty-title {
+  color: #334155;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+.ct-empty-sub {
+  color: #94a3b8;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* ============================================================
+   PAGINATION
+   ============================================================ */
+.ct-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-top: 1px solid #e2e8f0;
+  background: #fafbfc;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.ct-pagination-info {
+  color: #64748b;
+  font-size: 13px;
+}
+.ct-pagination-info strong {
+  color: #334155;
+  font-weight: 600;
+}
+
+.ct-pagination-btns {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ct-page-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+.ct-page-btn:hover:not(:disabled) {
+  background: #f0fdfa;
+  border-color: #229C8B;
+  color: #229C8B;
+}
+.ct-page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.ct-page-num {
+  min-width: 34px;
+  justify-content: center;
+  padding: 6px 4px;
+  border-radius: 8px;
+}
+.ct-page-num--active {
+  background: #229C8B !important;
+  border-color: #229C8B !important;
+  color: #fff !important;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(34, 156, 139, 0.3);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1280px) {
+  .ct-table { min-width: 960px; }
+}
+
+@media (max-width: 768px) {
+  .ct-pagination {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+/* ── Smooth entrance animation ── */
+.ct-row {
+  animation: ct-fadeIn 0.25s ease;
+}
+@keyframes ct-fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── AI Searching State (High Tech) ── */
+.ct-ai-searching-container {
+    padding: 100px 20px;
+    background: radial-gradient(circle at center, #f0fdfa 0%, #ffffff 100%);
+    text-align: center;
+}
+
+.ct-ai-pulse-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.ct-ai-pulse-icon {
+    position: relative;
+    z-index: 5;
+    filter: drop-shadow(0 0 15px rgba(34, 156, 139, 0.4));
+    animation: ct-ai-float 3s ease-in-out infinite;
+}
+
+.ct-ai-pulse-ring {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #229C8B;
+    border-radius: 50%;
+    animation: ct-ai-ripple 3s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    opacity: 0;
+}
+
+@keyframes ct-ai-ripple {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(3.5); opacity: 0; }
+}
+
+@keyframes ct-ai-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.ct-ai-searching-text {
+    font-size: 18px !important;
+    background: linear-gradient(90deg, #229C8B 0%, #0d9488 50%, #229C8B 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: ct-ai-shimmer 2s linear infinite;
+    margin-bottom: 12px;
+}
+
+@keyframes ct-ai-shimmer {
+    to { background-position: 200% center; }
+}
+
+.ct-ai-progress-bar {
+    width: 240px;
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    margin: 30px auto 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.ct-ai-progress-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 40%;
+    background: #229C8B;
+    border-radius: 10px;
+    animation: ct-ai-progress-scan 1.5s ease-in-out infinite;
+}
+
+@keyframes ct-ai-progress-scan {
+    0% { left: -40%; }
+    100% { left: 100%; }
+}

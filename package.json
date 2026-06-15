@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "countries-list": "^3.1.1",
+    "dayjs": "^1.11.13",
+    "i18n-iso-countries": "^7.14.0",
+    "joi": "^17.13.3",
+    "moment-timezone": "^0.5.48",
+    "nodemailer": "^6.10.1",
+    "react-datepicker": "^4.8.0",
+    "react-easy-crop": "^5.4.1",
+    "react-select": "^5.10.1"
+  },
+  "devDependencies": {
+    "patch-package": "^8.0.0",
+    "postinstall-postinstall": "^2.1.0"
+  }
+}

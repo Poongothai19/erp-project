@@ -1,0 +1,32 @@
+# Task: Refactor ManagerTimesheet.js
+
+- [x] **Phase 1: Constants & Utils**
+    - [x] Create `MTS_Constants.js`
+    - [x] Create `MTS_Utils.js`
+- [x] **Phase 2: UI Building Blocks**
+    - [x] Create `ModalOverlay.js`
+    - [x] Create `ModalHeader.js`
+    - [x] Create `InputField.js`
+    - [x] Create `SelectField.js`
+    - [x] Create `FormFieldGroup.js`
+    - [x] Create `CountryStateField.js`
+    - [x] Create `PositionField.js`
+    - [x] Create `DepartmentField.js`
+    - [x] Create `ModalActions.js`
+- [x] **Phase 3: Hooks & Complex UI Parts**
+    - [x] Create `useNotificationService.js`
+    - [x] Create `NotificationSystem.js`
+    - [x] Create `NotificationBell.js`
+- [x] **Phase 4: Modals**
+    - [x] Create `SidebarFilter.js`
+    - [x] Create `EmployeeFormBody.js`
+    - [x] Create `EmployeeModal.js`
+    - [x] Create `EmployeeDetailsModal.js`
+    - [x] Create `C2CModal.js`
+    - [x] Create `C2CDetailsModal.js`
+    - [x] Create `InvoiceModal.js`
+    - [x] Create `InvoiceDetailsModal.js`
+- [/] **Phase 5: Main Component Cleanup**
+    - [/] Update `ManagerTimesheet.js` with imports
+    - [ ] Remove monolithic code from `ManagerTimesheet.js`
+    - [ ] Final verification

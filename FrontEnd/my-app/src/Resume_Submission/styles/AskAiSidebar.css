@@ -1,0 +1,496 @@
+/* ============================================================
+   ASK AI SIDEBAR - AskAiSidebar.css
+   Light themed AI chat sidebar for Candidates module
+   ============================================================ */
+
+/* ── Sidebar Container ── */
+.cm-ai-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 340px;
+  height: 100vh;
+  background: #ffffff;
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+  z-index: 1100;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  /* Slide + fade animation */
+  transform: translateX(110%);
+  opacity: 0;
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.4s ease;
+}
+
+.cm-ai-sidebar--open {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* ── Staggered child animations ── */
+.cm-ai-sidebar--open .cm-ai-sidebar-header {
+  animation: cm-ai-slide-up 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+.cm-ai-sidebar--open .cm-ai-sidebar-body {
+  animation: cm-ai-slide-up 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+}
+.cm-ai-sidebar--open .cm-ai-sidebar-footer-area {
+  animation: cm-ai-slide-up 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+}
+.cm-ai-sidebar--open .cm-ai-sidebar-input-area {
+  animation: cm-ai-slide-up 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+}
+
+.cm-ai-sidebar--open .cm-ai-sidebar-greeting {
+  animation: cm-ai-slide-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+.cm-ai-sidebar--open .cm-ai-sidebar-subtext {
+  animation: cm-ai-slide-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.38s both;
+}
+.cm-ai-sidebar--open .cm-ai-sidebar-prompt-btn:nth-child(1) {
+  animation: cm-ai-slide-up 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.42s both;
+}
+.cm-ai-sidebar--open .cm-ai-sidebar-prompt-btn:nth-child(2) {
+  animation: cm-ai-slide-up 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.48s both;
+}
+.cm-ai-sidebar--open .cm-ai-sidebar-prompt-btn:nth-child(3) {
+  animation: cm-ai-slide-up 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.54s both;
+}
+
+@keyframes cm-ai-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Header ── */
+.cm-ai-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  flex-shrink: 0;
+  min-height: 44px;
+}
+
+.cm-ai-sidebar-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cm-ai-sidebar-menu-icon,
+.cm-ai-sidebar-action-icon {
+  color: #6b7280;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.cm-ai-sidebar-menu-icon:hover,
+.cm-ai-sidebar-action-icon:hover {
+  color: #111827;
+}
+
+.cm-ai-sidebar-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.cm-ai-sidebar-close:hover {
+  color: #111827;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* ── Body ── */
+.cm-ai-sidebar-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 16px;
+}
+
+.cm-ai-sidebar-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.cm-ai-sidebar-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cm-ai-sidebar-body::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+/* ── Welcome Screen ── */
+.cm-ai-sidebar-welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 40px;
+}
+
+.cm-ai-sidebar-greeting {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #229C8B;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+}
+
+.cm-ai-sidebar-subtext {
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin: 0 0 32px 0;
+  font-weight: 400;
+}
+
+/* ── Suggested Prompts ── */
+.cm-ai-sidebar-prompts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.cm-ai-sidebar-prompt-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  color: #374151;
+  font-size: 0.84rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  font-family: inherit;
+  width: fit-content;
+}
+
+.cm-ai-sidebar-prompt-btn:hover {
+  background: #f3f4f6;
+  border-color: #229C8B;
+  color: #111827;
+  transform: translateX(4px);
+}
+
+/* ── Messages ── */
+.cm-ai-sidebar-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cm-ai-sidebar-msg {
+  display: flex;
+  gap: 10px;
+  max-width: 100%;
+}
+
+.cm-ai-sidebar-msg--user {
+  justify-content: flex-end;
+}
+
+.cm-ai-sidebar-msg--user .cm-ai-sidebar-msg-content {
+  background: #229C8B;
+  color: #fff;
+  border-radius: 16px 16px 4px 16px;
+  padding: 10px 14px;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  max-width: 85%;
+}
+
+.cm-ai-sidebar-msg--ai {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.cm-ai-sidebar-msg--ai .cm-ai-sidebar-msg-content {
+  background: #f3f4f6;
+  color: #374151;
+  border-radius: 16px 16px 16px 4px;
+  padding: 12px 14px;
+  font-size: 0.84rem;
+  line-height: 1.6;
+  max-width: 85%;
+}
+
+.cm-ai-sidebar-msg-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #229C8B, #1a7a6d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+  margin-top: 2px;
+}
+
+.cm-ai-sidebar-msg-bullet {
+  padding: 2px 0;
+}
+
+.cm-ai-sidebar-msg-content strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.cm-ai-sidebar-msg--ai .cm-ai-sidebar-msg-content strong {
+  color: #111827;
+}
+
+/* ── Footer Area (Context Pill) ── */
+.cm-ai-sidebar-footer-area {
+  padding: 8px 12px;
+  flex-shrink: 0;
+}
+
+.cm-ai-sidebar-context-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #f3f4f6;
+  border-radius: 16px;
+  font-size: 0.76rem;
+  color: #6b7280;
+  width: fit-content;
+}
+
+.cm-ai-sidebar-context-pill svg {
+  color: #229C8B;
+  flex-shrink: 0;
+}
+
+.cm-ai-sidebar-context-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 2px;
+  transition: color 0.2s ease;
+}
+
+.cm-ai-sidebar-context-close:hover {
+  color: #374151;
+}
+
+/* ── Input Area ── */
+.cm-ai-sidebar-input-area {
+  padding: 8px 12px 14px 12px;
+  flex-shrink: 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.cm-ai-sidebar-input {
+  width: 100%;
+  padding: 10px 14px;
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  color: #111827;
+  font-size: 0.84rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+  font-family: inherit;
+  margin-bottom: 0;
+}
+
+.cm-ai-sidebar-input::placeholder {
+  color: #9ca3af;
+}
+
+.cm-ai-sidebar-input:focus {
+  border-color: #229C8B;
+}
+
+.cm-ai-sidebar-input-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cm-ai-sidebar-input-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.cm-ai-sidebar-input-action-btn:hover {
+  color: #4b5563;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.cm-ai-sidebar-speed-selector {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.76rem;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  margin-left: auto;
+  margin-right: 8px;
+}
+
+.cm-ai-sidebar-speed-selector:hover {
+  color: #374151;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.cm-ai-sidebar-send-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #229C8B;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.cm-ai-sidebar-send-btn:hover:not(:disabled) {
+  background: #1a7a6d;
+  transform: scale(1.05);
+}
+
+.cm-ai-sidebar-send-btn:disabled {
+  background: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* ── ASK AI Toggle Button in Toolbar ── */
+.cm-ask-ai-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 16px;
+  background: #ffffff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: inherit;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.cm-ask-ai-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(34, 156, 139, 0.15), transparent);
+  transition: left 0.5s ease;
+}
+
+.cm-ask-ai-btn:hover::before {
+  left: 100%;
+}
+
+.cm-ask-ai-btn:hover {
+  border-color: #229C8B;
+  box-shadow: 0 0 12px rgba(34, 156, 139, 0.25);
+  transform: translateY(-1px);
+}
+
+.cm-ask-ai-btn--active {
+  background: linear-gradient(135deg, #229C8B, #1a7a6d);
+  border-color: #229C8B;
+  box-shadow: 0 0 12px rgba(34, 156, 139, 0.3);
+}
+
+.cm-ask-ai-btn svg {
+  color: #229C8B;
+}
+
+.cm-ask-ai-btn--active svg {
+  color: #fff;
+}
+
+/* ── Overlay when sidebar is open ── */
+.cm-ai-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1099;
+  animation: cm-ai-fade-in 0.45s ease both;
+}
+
+@keyframes cm-ai-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .cm-ai-sidebar {
+    width: 100%;
+    right: -100%;
+  }
+}
+
+/* ── Animations ── */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.loading-msg {
+  font-style: italic;
+  color: #6b7280;
+}

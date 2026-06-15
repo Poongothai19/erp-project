@@ -1,0 +1,54 @@
+/* Container styling */
+.manage-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  color: black;
+  padding: 12px 16px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* Close button */
+.manage-sidebar-close-btn {
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.manage-sidebar-close-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* Label container */
+.manage-sidebar-dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #333;
+  background: #fff;
+  transition: background 0.2s ease;
+}
+
+.manage-sidebar-dropdown-item:hover {
+  background: #f9f9f9;
+}
+
+/* Checkbox input spacing */
+.manage-sidebar-dropdown-item input[type="checkbox"] {
+  margin-right: 10px;
+  accent-color: #019d88;
+  width: 16px;
+  height: 16px;
+}
+
+/* Optional wrapper (if needed) */
+.manage-sidebar-wrapper {
+  width: 260px;
+  max-height: 90vh;
+  border-radius: 8px;
+  background: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+  margin-left:20px;
+}

@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:wght@400;700&display=swap');
+
+/* 📌 Scope all styles within .login-page-container */
+.login-page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    font-family: 'Quattrocento Sans', sans-serif;
+}
+
+/* 📌 Login Box */
+.login-page-container .login-container {
+    display: flex;
+    flex-direction: row;
+    width: 850px;
+    height: 80vh;
+    max-width: 90%;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.login-page-container .login-container:hover {
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* 📌 Left Section - Image */
+.login-page-container .logoleft-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #399f92, #98a6a3, #d8dada);
+    padding: 20px;
+}
+
+.login-page-container .loginside-image {
+    width: 100%;
+    max-width: 300px;
+    object-fit: contain;
+}
+
+/* 📌 Card Flip Container */
+.login-page-container .flip-card {
+    flex: 1;
+    perspective: 1000px;
+    position: relative;
+}
+
+.login-page-container .flip-card-front,
+.login-page-container .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.8s ease-in-out;
+    border-radius: 0 12px 12px 0;
+}
+
+.login-page-container .flip-card-front {
+    transform: rotateY(0deg);
+}
+
+.login-page-container .flip-card-back {
+    transform: rotateY(180deg);
+}
+
+.login-page-container .flip-card.flipped .flip-card-front {
+    transform: rotateY(-180deg);
+}
+
+.login-page-container .flip-card.flipped .flip-card-back {
+    transform: rotateY(0deg);
+}
+
+/* 📌 Right Section - Login/Signup Form */
+.login-page-container .logoright-section {
+    flex: 1;
+    padding: 50px;
+    text-align: center;
+    background: linear-gradient(to bottom, #399f92, #98a6a3, #d8dada);
+    height: 100%;
+    box-sizing: border-box;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 📌 Logo Section - IMPROVED SPACING */
+.login-page-container .loginlogo-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    position: relative;
+    width: 100%;
+}
+
+.login-page-container .logo {
+    width: 50px;
+    height: 40px;
+}
+
+.login-page-container .logo1 {
+    width: 150px;
+    height: auto;
+}
+
+/* 📌 Login Form */
+.login-page-container h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* 📌 Input Fields */
+.login-page-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+.login-page-container input:focus {
+    border-color: #399f92;
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(52, 152, 219, 0.3);
+}
+
+/* 📌 Password Container */
+.login-page-container .loginpassword-container {
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.login-page-container .loginpassword-container input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.login-page-container .eye-icon {
+    position: absolute;
+    right: 12px;
+    top: 40%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #555;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+.login-page-container .eye-icon:hover {
+    color: #399f92;
+}
+
+/* 📌 Error Message - IMPROVED STYLING */
+.login-page-container .loginerror-message{
+    color: #f34d3b;
+    font-size: 16px;
+    padding: 8px 12px;
+    margin: 8px 0 12px;
+    background-color: rgba(231, 76, 60, 0.2);
+    border-radius: 8px;
+    border-left: 3px solid #cc2613b7;
+    text-align: left;
+    display: block;
+    font-weight: 600;
+}
+
+/* 📌 Success Message for Signup */
+.login-page-container .signup-success-message {
+    color: #27ae60;
+    font-size: 16px;
+    padding: 8px 12px;
+    margin: 8px 0 12px;
+    background-color: rgba(39, 174, 96, 0.2);
+    border-radius: 8px;
+    border-left: 3px solid #27ae60;
+    text-align: left;
+    display: block;
+    font-weight: 600;
+}
+
+/* 📌 Login Button with improved responsive styling */
+.login-page-container .login-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #399f92, #2c3e50);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+}
+
+.login-page-container .login-button:hover {
+    background: linear-gradient(to right, #2c3e50, #399f92);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-page-container .login-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 📌 Loading state styles */
+.login-page-container .login-button.loading {
+    background: linear-gradient(to right, #399f92, #2c3e50);
+    cursor: wait;
+}
+
+/* 📌 Disabled Login Button */
+.login-page-container .login-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    opacity: 0.8;
+}
+
+/* 📌 Forgot Password Button */
+.login-page-container .loginforgot-password {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.login-page-container .loginforgot-password a {
+    color: #026164;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.login-page-container .loginforgot-password a:hover {
+    color: #07e7c5;
+}
+
+/* 📌 NEW: Signup Link Styling */
+.login-page-container .signup-link {
+    margin-top: 10px;
+    font-size: 14px;
+    color: white;
+}
+
+.login-page-container .signup-link a {
+    color: #026164;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.login-page-container .signup-link a:hover {
+    color: #07e7c5;
+    text-decoration: underline;
+}
+
+/* 📌 Responsive Adjustments */
+@media (max-width: 768px) {
+    .login-page-container .login-container {
+        flex-direction: column;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .login-page-container .logoleft-section {
+        display: none;
+    }
+
+    .login-page-container .logoright-section {
+        padding: 30px;
+        min-height: 400px;
+    }
+
+    .login-page-container .logo {
+        width: 70px;
+        margin-right: 10px;
+    }
+    
+    .login-page-container .logo1 {
+        width: 130px;
+    }
+
+    /* Adjust flip card for mobile */
+    .login-page-container .flip-card-front,
+    .login-page-container .flip-card-back {
+        border-radius: 12px;
+    }
+}
+
+
+
+
+.role-select {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.signup-success-message {
+  color: #28a745;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  text-align: center;
+}

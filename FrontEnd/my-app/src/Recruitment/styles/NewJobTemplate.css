@@ -1,0 +1,277 @@
+.new-job-template-container {
+  width: 90%;
+  /* max-width: 1200px; */
+  /* margin: 20px auto; */
+  padding: 30px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  max-height: 110vh;
+  overflow-y: auto;
+  /* border: 1px solid #087465; */
+
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 25px;
+  text-align: left;
+  border-bottom: 2px solid #087465;
+  padding-bottom: 12px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.input-field,
+.select-field,
+.textarea-field {
+  width: 100%;
+  height: fit-content;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+  background: #f9f9f9;
+}
+
+.input-field:focus,
+.select-field:focus,
+.textarea-field:focus {
+  border-color:   linear-gradient(180deg, #019d88, #0d2e26)!important;
+  outline: none;
+  background: #ffffff;
+  box-shadow: 0px 0px 6px rgba(0, 123, 255, 0.2);
+}
+
+.custom-select-container {
+  border: 1px solid #ccc !important;
+  box-shadow: none !important;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Hover effect */
+.custom-select-container:hover {
+  border: 1px solid #aaa !important;
+}
+
+/* Styles for the options */
+.custom-select-option {
+  background-color: white !important;
+  color: black !important;
+  padding: 10px;
+}
+
+/* Highlighted option when hovered */
+.custom-select-option:hover {
+  background-color: #f0f0f0 !important;
+}
+
+
+.textarea-field {
+  height: 140px;
+  resize: vertical;
+}
+
+.file-input {
+  display: block;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  background: #5a6268;
+}
+
+.description {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Responsive Styling */
+@media (max-width: 1024px) {
+  .container {
+      width: 95%;
+      max-width: 100%;
+      padding: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+      width: 100%;
+      padding: 20px;
+      border-radius: 0;
+  }
+  
+  .btn-container {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+.button-group {
+  display: flex;
+  justify-content: flex-end; 
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.primary-btn1 {
+   background: linear-gradient(180deg, #019d88, #0d2e26);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.secondary-btn1 {
+  background: #f8f9fa;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+.cancel-btn {
+  background: #eeeded;
+  color: #7a1717;
+  font-weight: 1000;
+
+}
+
+.cancel-btn:hover {
+  background-color: #d9d9d9;
+  font-weight: bold;
+}
+/* 
+.primary-btn1:hover {
+  background: #06908d;
+} */
+
+.secondary-btn1:hover, .cancel-btn:hover {
+  background: #e9ecef;
+}
+.new-job-template-container  {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.new-job-template-container  .label {
+  font-weight: 600;
+  color: #4a5568;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.new-job-template-container  .input,
+.new-job-template-container  .select,
+.new-job-template-container  .textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.new-job-template-container  .input:focus,
+.new-job-template-container  .select:focus,
+.new-job-template-container  .textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.new-job-template-container  .grid-cols-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.new-job-template-container  .button {
+  background-color: #3b82f6;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.new-job-template-container  .button:hover {
+  background-color: #2563eb;
+}
+
+.new-job-template-container  .assist-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #3b82f6;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.new-job-template-container  .assist-btn:hover {
+  background-color: #2563eb;
+}
+
+@media (max-width: 768px) {
+  .new-job-template-container  .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+}
+}

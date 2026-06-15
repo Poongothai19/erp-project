@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Prophecy ERP Dice Automator",
+  "version": "1.0",
+  "description": "Automates job posting from Prophecy ERP to Dice.com",
+  "permissions": ["activeTab", "scripting", "storage", "tabs"],
+  "host_permissions": [
+    "https://www.dice.com/*",
+    "https://employers.indeed.com/*",
+    "http://localhost:218/*",
+    "https://*.prophecytechs.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://localhost:218/*",
+        "https://*.prophecytechs.com/*"
+      ],
+      "js": ["content_erp.js"]
+    },
+    {
+      "matches": [
+        "https://www.dice.com/employer/home*",
+        "https://www.dice.com/employer/job/*",
+        "https://*.dice.com/*"
+      ],
+      "js": ["content_dice.js"]
+    },
+    {
+      "matches": [
+        "https://employers.indeed.com/*"
+      ],
+      "js": ["content_indeed.js"]
+    }
+  ]
+}

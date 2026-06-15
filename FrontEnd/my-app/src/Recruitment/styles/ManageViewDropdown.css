@@ -1,0 +1,25 @@
+
+   .dropdown-btn{
+    background: linear-gradient(180deg, #019d88, #0d2e26);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+   
+
+  .dropdown-btn:hover{
+    background: linear-gradient(180deg, #027a6e, #0a251f);
+    transform: translateY(-1px);
+  }
+
+  .dropdown-btn:active{
+    transform: scale(0.98);
+  }

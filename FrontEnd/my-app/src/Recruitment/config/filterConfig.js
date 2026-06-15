@@ -1,0 +1,57 @@
+// export const jobFilterFieldMapping = {
+//   "Posting Title": "postingTitle",
+//   "To-Dos": "toDos",
+//   "Notes": "notes",
+//   "Job Opening ID": "jobId",
+//   "Job Opening Status": "jobStatusId",
+//   "City": "city",
+//   "Client Name": "clientName",
+//   "Account Manager": "accountManagerId",
+//   "Actual Revenue": "actualRevenue",
+//   "Created Time": "dateOpened",
+//   "Assigned Recruiter": "assignedrecruiter", 
+//   "Job Type": "jobTypeId",
+//   "Keep on Career Site": "keepOnCareerSite",
+//   "Modified Time": "modifiedTime",
+//   "Remote Job": "remoteJob",
+// };
+
+// export const filters = {
+//   "Posting Title": ["is", "isn't", "contains", "doesn't contain", "starts with", "ends with"],
+//   "To-Dos": ["Without Open To-Do", "Overdue", "To-Do Due Today"],
+//   "Notes": ["Without any notes", "Notes Added"],
+//   "Job Opening ID": ["is", "isn't", "contains"],
+//   "Job Opening Status": ["is", "isn't", "Declined", "Filled", "In-Progress"],
+//   "City": ["is", "isn't", "contains"],
+//   "Client Name": ["is", "isn't", "contains"],
+//   "Account Manager": ["is", "isn't", "Current User"],
+//   "Actual Revenue": ["=", "!=", "<", "<=", ">", ">="],
+//   "Created Time": ["Today", "Yesterday", "This week", "This Month", "This Year"],
+//   "Job Type": ["Fulltime", "Part-time", "Permanent"],
+//   "Keep on Career Site": ["Selected", "Not Selected"],
+//   "Modified Time": ["Today", "Yesterday", "This week", "This Month", "This Year"],
+//   "Remote Job": ["Selected", "Not Selected"],
+//   "Assigned Recruiter": ["is", "isn't", "Current User"],
+// };
+
+// export const availableColumns = [
+//   { key:"jobDescription", label: "Job Description" },
+//   { key: "clientName", label: "Client Name" },
+//   { key: "contactName", label: "Contact Name" },
+//   { key: "accountManagerId", label: "Account Manager ID" },
+//   { key: "dateOpened", label: "Date Opened" },
+//   { key: "targetDate", label: "Target Date" },
+//   { key: "industry", label: "Industry" },
+//   { key: "salary", label: "Salary" },
+//   { key: "workExperience", label: "Work Experience" },
+//   { key: "numPositions", label: "Number of Positions" },
+//   { key: "revenuePerPosition", label: "Revenue Per Position" },
+//   { key: "expectedRevenue", label: "Expected Revenue" },
+//   { key: "actualRevenue", label: "Actual Revenue" },
+//   { key: "city", label: "City" },
+//   { key: "province", label: "Province" },
+//   { key: "countryId", label: "Country ID" },
+//   { key: "assignedrecruiter", label: "Assigned Recruiter" },
+//   { key: "postalCode", label: "Postal Code" }
+// ];
+

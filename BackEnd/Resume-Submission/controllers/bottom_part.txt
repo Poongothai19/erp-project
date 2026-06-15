@@ -1,0 +1,267 @@
+// ============================================
+// SENDGRID EMAIL HELPER
+// ============================================
+const sendEmailViaSendGrid = async (emailData) => {
+  try {
+    const apiKey = process.env.SENDGRID_API_KEY;
+    
+    if (!apiKey) {
+      console.error('❌ SENDGRID_API_KEY not set in environment variables');
+      return { success: false, error: 'SendGrid API key not configured' };
+    }
+
+    console.log('📧 Preparing to send email via SendGrid to:', emailData.to);
+    console.log('Subject:', emailData.subject);
+
+    const formatRecipients = (recips) => {
+        if (!recips) return undefined;
+        if (Array.isArray(recips)) return recips.map(e => ({ email: e }));
+        return [{ email: recips }];
+    };
+
+    const personalizations = {
+      to: formatRecipients(emailData.to),
+      subject: emailData.subject
+    };
+    if (emailData.cc && emailData.cc.length > 0) personalizations.cc = formatRecipients(emailData.cc);
+    if (emailData.bcc && emailData.bcc.length > 0) personalizations.bcc = formatRecipients(emailData.bcc);
+
+    const payload = {
+      personalizations: [personalizations],
+      from: {
+        email: process.env.SENDGRID_FROM_EMAIL || 'no-reply@prophecytechs.com',
+        name: process.env.SENDGRID_FROM_NAME || 'Prophecy Tech'
+      },
+      content: [
+        {
+          type: 'text/html',
+          value: emailData.html
+        }
+      ]
+    };
+
+    if (emailData.attachments && emailData.attachments.length > 0) {
+      payload.attachments = emailData.attachments;
+    }
+
+    const payloadString = JSON.stringify(payload);
+
+    return new Promise((resolve, reject) => {
+      const options = {
+        hostname: 'api.sendgrid.com',
+        port: 443,
+        path: '/v3/mail/send',
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json',
+          'Content-Length': Buffer.byteLength(payloadString)
+        }
+      };
+
+      console.log('📡 Sending request to SendGrid API...');
+
+      const reqH = https.request(options, (res) => {
+        let data = '';
+        
+        console.log('SendGrid Response Status:', res.statusCode);
+        console.log('SendGrid Response Headers:', res.headers);
+
+        res.on('data', (chunk) => {
+          data += chunk;
+        });
+
+        res.on('end', () => {
+          if (res.statusCode >= 200 && res.statusCode < 300) {
+            console.log('✅ Email sent successfully via SendGrid');
+            resolve({ success: true });
+          } else {
+            console.error('❌ SendGrid error:', res.statusCode);
+            console.error('SendGrid response:', data);
+            resolve({ 
+              success: false, 
+              error: `SendGrid returned ${res.statusCode}: ${data}` 
+            });
+          }
+        });
+      });
+
+      reqH.on('error', (error) => {
+        console.error('❌ SendGrid request error:', error.message);
+        reject(error);
+      });
+
+      reqH.write(payloadString);
+      reqH.end();
+    });
+  } catch (error) {
+    console.error('❌ Error in sendEmailViaSendGrid:', error.message);
+    return { success: false, error: error.message };
+  }
+};
+
+// ─── SHARE RESUME (Email via SendGrid) ───────────────────────────────────────
+
+exports.shareResume = async (req, res) => {
+  console.log('=== Share Resume Request ===');
+  const { candidateId, to, cc, bcc, subject, body, documentIds } = req.body;
+
+  if (!to || !to.trim()) {
+    return res.status(400).json({ success: false, error: 'Recipient email is required' });
+  }
+  if (!documentIds || !Array.isArray(documentIds) || documentIds.length === 0) {
+    return res.status(400).json({ success: false, error: 'At least one document must be selected to share' });
+  }
+  if (!process.env.SENDGRID_API_KEY) {
+    return res.status(500).json({ success: false, error: 'SendGrid API Key is not configured on the server' });
+  }
+
+  try {
+    const pool = await poolPromise;
+
+    // Fetch the specific documents from the DB for attachments
+    let placeholders = [];
+    const request = pool.request();
+    for (let i = 0; i < documentIds.length; i++) {
+        const pName = `docId${i}`;
+        placeholders.push(`@${pName}`);
+        request.input(pName, sql.Int, documentIds[i]);
+    }
+    
+    // Validate that these documents actually belong to the candidate
+    request.input('CandidateId', sql.Int, candidateId);
+
+    const docResult = await request.query(`
+      SELECT DocumentId, FileNameOriginal, MimeType, ResumeFileData
+      FROM [Jobpost].[recruit].[CandidateDocument]
+      WHERE CandidateId = @CandidateId
+        AND DocumentId IN (${placeholders.join(', ')})
+        AND IsDeleted = 0
+    `);
+
+    if (!docResult.recordset.length) {
+      return res.status(404).json({ success: false, error: 'Selected documents not found' });
+    }
+
+    // Prepare SendGrid Attachments
+    const attachments = docResult.recordset.map(doc => {
+      // Return formatting for SendGrid v3
+      return {
+        content: doc.ResumeFileData.toString('base64'),
+        filename: doc.FileNameOriginal || `Resume_Candidate_${candidateId}.pdf`,
+        type: doc.MimeType || 'application/pdf',
+        disposition: 'attachment'
+      };
+    });
+
+    // Helper functions for recipients
+    const parseRecipients = (input) => {
+      if (!input) return undefined;
+      if (Array.isArray(input)) return input.filter(i => validateEmail(i));
+      return input.split(/[,;\s]+/).map(i => i.trim()).filter(i => validateEmail(i));
+    };
+
+    const toArray = parseRecipients(to);
+    const ccArray = parseRecipients(cc);
+    const bccArray = parseRecipients(bcc);
+
+    if (toArray.length === 0) {
+      return res.status(400).json({ success: false, error: 'No valid recipient email provided' });
+    }
+
+    const emailData = {
+      to: toArray,
+      cc: ccArray,
+      bcc: bccArray,
+      subject: subject || 'Candidate Resume',
+      html: body || '<p>Please find the attached candidate resume.</p>',
+      attachments: attachments
+    };
+
+    const emailResult = await sendEmailViaSendGrid(emailData);
+
+    if (emailResult.success) {
+      res.status(200).json({ success: true, message: 'Resume shared successfully' });
+    } else {
+      res.status(500).json({ success: false, error: 'Failed to send email', details: emailResult.error });
+    }
+  } catch (error) {
+    console.error('Share resume error:', error);
+    res.status(500).json({ 
+      success: false, 
+      error: 'Failed to share resume', 
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined 
+    });
+  }
+};
+
+// ─── SCHEDULE INTERVIEW (Email via SendGrid) ─────────────────────────────────
+
+exports.scheduleInterview = async (req, res) => {
+  console.log('=== Schedule Interview Request ===');
+  const { to, cc, bcc, subject, body } = req.body;
+
+  if (!to || !to.trim()) {
+    return res.status(400).json({ success: false, error: 'Recipient email is required' });
+  }
+
+  try {
+    // Helper function for recipients inline (similar to shareResume)
+    const parseRecipients = (input) => {
+      if (!input) return undefined;
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const validateEmail = (email) => re.test(email);
+
+      if (Array.isArray(input)) return input.filter(i => validateEmail(i));
+      return input.split(/[,;\s]+/).map(i => i.trim()).filter(i => validateEmail(i));
+    };
+
+    const toArray = parseRecipients(to);
+    const ccArray = parseRecipients(cc);
+    const bccArray = parseRecipients(bcc);
+
+    if (toArray.length === 0) {
+      return res.status(400).json({ success: false, error: 'No valid recipient email provided' });
+    }
+
+    const emailData = {
+      to: toArray,
+      cc: ccArray,
+      bcc: bccArray,
+      subject: subject || 'Interview Scheduled',
+      html: body || '<p>An interview has been scheduled with Prophecy Tech.</p>'
+    };
+
+    const emailResult = await sendEmailViaSendGrid(emailData);
+
+    if (emailResult.success) {
+      res.status(200).json({ success: true, message: 'Interview scheduled and email sent successfully' });
+    } else {
+      res.status(500).json({ success: false, error: 'Failed to send interview email', details: emailResult.error });
+    }
+  } catch (error) {
+    console.error('Schedule interview error:', error);
+    res.status(500).json({ 
+      success: false, 
+      error: 'Failed to schedule interview email', 
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined 
+    });
+  }
+};
+
+// ─── Utility helpers ─────────────────────────────────────────────────────────
+
+function parseJsonField(field) {
+  if (!field) return [];
+  if (Array.isArray(field)) return field;
+  if (typeof field === 'string') {
+    try { return JSON.parse(field); } catch { return []; }
+  }
+  return [];
+}
+
+function parseDate(value) {
+  if (!value) return null;
+  const d = new Date(value);
+  return isNaN(d) ? null : d;
+}

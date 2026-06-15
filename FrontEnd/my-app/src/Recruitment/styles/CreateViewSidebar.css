@@ -1,0 +1,131 @@
+.create-view-wrapper {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .create-toggle-btn{
+    background: linear-gradient(180deg, #019d88, #0d2e26);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .create-toggle-btn:hover {
+    background: linear-gradient(180deg, #027a6e, #0a251f);
+    transform: translateY(-1px);
+  }
+  .create-toggle-btn:active{  transform: scale(0.98);}
+
+  
+
+
+
+
+  .create-view-sidebar {
+    position: fixed;
+    top: 0;
+    left: -320px;
+    width: 320px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    z-index: 1002;
+    transition: left 0.3s ease-in-out;
+    overflow-y: auto;
+  }
+  
+  .create-view-sidebar.active {
+    left: 0;
+  }
+  
+  .create-view-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+  }
+  
+  .create-sidebar-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 0.4rem;
+    background: #f9f9f9;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .create-sidebar-item:hover {
+    background: #ececec;
+  }
+  
+  .view-row span {
+    margin-left: 8px;
+    cursor: pointer;
+  }
+  
+  .action-btn {
+    margin-left: 8px;
+    cursor: pointer;
+  }
+  
+  /* .bulk-delete-btn {
+    margin-left:20%;
+    background-color: #ff4c4c;
+    color: white;
+    justify-content: center;
+    padding: 0.9rem;
+    border: none;
+    height: 40px;
+    border-radius: 6px;
+    width: 60%;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+   */
+   .bulk-delete-btn {
+    margin-left: 20%;
+    background: #eeeded;
+    color: #7a1717;
+    padding: 0.9rem;
+    border: none;
+    height: 40px;
+    border-radius: 6px;
+    width: 80%;
+    margin-top: 10px;
+    cursor: pointer;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* optional: adds spacing between icon and text */
+    font-size: 16px;
+  }
+  
+  .bulk-delete-btn:hover {
+    background: #eeeded;
+  }
+  
+  .create-sidebar-divider {
+    margin: 10px 0;
+    border-top: 1px solid #ccc;
+  }
+  
+  .h3
+  {
+    text-align:center;
+    font-weight:400px;
+  }

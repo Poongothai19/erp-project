@@ -1,0 +1,487 @@
+/* Main Form Container */
+.candidate-form {
+    width: 100%;
+    padding: 20px;
+    background: #ffffff;
+    margin: 0 auto; /* Center the form */
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    font-family: "Poppins", sans-serif;
+    transition: all 0.3s ease; /* Smooth transition for resize */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+.candidate-required-asterisk{
+color: red;
+}
+/* Form Header */
+.candidate-form .candidate-form-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: rgb(13, 12, 12);
+    border-radius: 10px 10px 0 0;
+}
+
+.candidate-form .candidate-form-top h2 {
+    font-size: 22px;
+  
+}
+
+.candidate-form .candidate-form-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+/* candidate-form-buttons */
+.candidate-form button {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 18px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.candidate-form .candidate-form-primary-save {
+    background: linear-gradient(180deg, #019d88, #0d2e26);
+    color: white;
+    /* border: 2px solid transparent; */
+}
+
+.candidate-form .candidate-form-primary-save:hover {
+    background: linear-gradient(180deg, #019d88, #0d2e26);
+}
+
+.candidate-form .candidate-form-cancel {
+    background: #eeeded;
+    color: #7a1717;
+}
+
+.candidate-form .candidate-form-cancel:hover {
+    background-color: #b3b3b3;
+}
+
+/* Form Sections */
+.candidate-form .candidate-form-section {
+    margin-top: 25px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #087465;
+}
+
+.candidate-form .candidate-form-section h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00796b;
+    margin-bottom: 18px;
+}
+
+.candidate-form .candidate-form-container-edu h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00796b;
+    margin-bottom: 15px;
+    /* border-bottom: 2px solid #087465; */
+}
+
+/* Form Fields */
+.candidate-form .candidate-form-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Forces 2 columns per row */
+    gap: 20px;
+}
+
+.candidate-form label {
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 6px;
+}
+
+.candidate-form input,
+.candidate-form select,
+.candidate-form textarea {
+    padding: 10px;
+    border: 1px solid #019d88;
+    border-radius: 5px;
+    height: 42px;
+    width: 100%;
+    margin-top: 5px;
+    box-sizing: border-box;
+    font-family: 'Maven Pro', sans-serif;
+    transition: border 0.3s ease-in-out;
+}
+
+.candidate-form input:focus,
+.candidate-form select:focus,
+.candidate-form textarea:focus {
+    border: 1px solid #0d2e26;
+    outline: none;
+    box-shadow: 0 0 5px rgba(1, 157, 136, 0.5);
+}
+
+/* First Name Input with Prefix */
+.candidate-form-first-name-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.candidate-form-first-name-container select {
+    max-width: 120px;
+    padding: 12px;
+    border: 1px solid #019d88;
+    border-radius: 8px;
+    background: #f8f8f8;
+}
+
+.candidate-form-first-name-container select:focus {
+    border: 1px solid #0d2e26;
+    outline: none;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(1, 157, 136, 0.5);
+}
+
+/* Phone Input */
+
+.candidate-form-first-name-container {
+    display: flex;
+    align-items: center; /* Ensures vertical alignment */
+    gap: 10px; /* Space between select and input */
+    width: 100%;
+}
+
+.candidate-form-first-name-container select {
+    max-width: 100px; /* Adjust width as needed */
+    height: 42px; /* Match input field height */
+    padding: 10px;
+    border: 1px solid #019d88;
+    border-radius: 5px;
+    background: #f8f8f8;
+}
+
+.candidate-form-first-name-container input {
+    flex-grow: 1; /* Makes input field take remaining space */
+    height: 42px; /* Ensures height consistency */
+}
+
+input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    background-color: transparent !important;
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    box-shadow: 0 0 0px 1000px white inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+ .candidate-form .react-tel-input {
+        width: 100%;
+        position: relative;
+        margin-top: 5px;
+    
+    }
+.candidate-form .react-tel-input .flag-dropdown {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #019d88;
+    padding: 0 2px;
+}
+
+.candidate-form .react-tel-input .form-control {
+    padding-left: 50px !important; 
+    border: 1px solid var(--jobopening-primary-color) !important;
+    border-radius: 5px;
+    height: 42px;
+    width: 100%;
+    margin-top: 5px;
+    background-color: white;
+    box-sizing: border-box;
+    font-family: 'Maven Pro', sans-serif;
+    transition: border 0.3s ease-in-out;
+}
+ .candidate-form-phone-list .country-list {
+    outline: none;
+    z-index: 1;
+    list-style: none;
+    position: absolute;
+    padding: 0;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.35);
+    background-color: white;
+    width: 300px;
+    margin-top: 255px;
+    max-height: 200px;
+    overflow-y: scroll;
+    border-radius: 0 0 3px 3px;
+  }
+  .react-tel-input .country-list .search-box {
+    border: 1px solid #cacaca;
+    border-radius: 3px;
+    font-size: 15px;
+    line-height: 15px;
+    margin-left: 6px;
+    padding: 3px 8px 5px;
+    outline: none;
+}
+  
+.react-tel-input .flag-dropdown {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    border: 1px solid #087465;
+    border-radius: 3px 0 0 3px;
+  }
+  .react-tel-input .country-list .search-emoji{
+    display: none;
+  }
+  .react-tel-input .country-list {
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  
+    border-radius: 6px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+  }
+.client-form-wrapper .react-tel-input .form-control {
+    margin-top:5px;
+    width: 100% !important;
+    border: 1px solid var(--jobopening-primary-color);
+    outline: none;
+    height: 100%;
+    height: 42px !important;
+  }
+.candidate-form .react-tel-input .flag-container {
+    position: absolute;
+    left: 10px;
+    top: 30%;
+    transform: translateY(-50%);
+}
+
+
+/* Education & Experience Section */
+.candidate-form-container-edu {
+    margin-top: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #087465;
+}
+
+.candidate-form-container-edu .candidate-form-add-btn {
+    display: block;
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(180deg, #019d88, #0d2e26);
+    color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.candidate-form-container-edu .candidate-form-add-btn:hover {
+    background: #005a4e;
+}
+
+.candidate-form-container-edu .candidate-form-input-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.candidate-form-container-edu .candidate-form-input-container input {
+    flex: 1;
+    /* min-width: 220px; */
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #f8f8f8;
+}
+
+.candidate-form-container-edu .candidate-form-remove-btn {
+    background: #d32f2f;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+}
+
+.candidate-form-container-edu .candidate-form-remove-btn:hover {
+    background: #b71c1c;
+}
+
+.candidate-attachment-section {
+    margin-top: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #087465;
+  }
+  
+  .candidate-attachment-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00796b;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    /* border-bottom: 2px solid #087465; */
+  }
+  
+  .candidate-attachment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+  }
+  
+  .candidate-attachment-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .candidate-attachment-label {
+    display: block;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 8px;
+  }
+  
+  .candidate-candidate-attachment-input-container {
+    border: 2px dashed #019d88;
+    border-radius: 8px;
+    position: relative;
+    background: #f8f8f8;
+    transition: all 0.3s ease;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .candidate-candidate-attachment-input-container:hover {
+    background: rgba(1, 157, 136, 0.1);
+    border-color: #0d2e26;
+  }
+  
+  .candidate-attachment-input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .candidate-attachment-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    pointer-events: none;
+  }
+  
+  .candidate-form-upload-icon {
+    margin-bottom: 8px;
+    color: #019d88;
+  }
+  
+  .candidate-form-file-selected {
+    background: #ebf7f6 !important;
+    border: 2px solid #019d88 !important;
+    padding: 10px 15px;
+  }
+  
+  .candidate-file-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .candidate-file-name {
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70%;
+  }
+  
+  .candidate-file-remove {
+    background: none;
+    border: none;
+    color: #d32f2f;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+  }
+  
+  .candidate-file-remove:hover {
+    background: rgba(211, 47, 47, 0.1);
+  }
+  
+  .candidate-file-icon {
+    color: #019d88;
+    margin-right: 8px;
+  }
+  
+/* Responsive Design */
+@media (min-width: 1024px) {
+    .candidate-form {
+        max-width: calc(100% - 100px); /* Account for sidebar */
+        margin-left: 90px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .candidate-form {
+        max-width: 95%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    .candidate-form .candidate-form-grid-container {
+        grid-template-columns: 1fr; /* Stack items on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .candidate-form {
+        max-width: 100%;
+        margin: 5px;
+        padding: 10px;
+    }
+    
+    .candidate-form .candidate-form-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Placeholder Styling */
+::placeholder {
+    color: #888 !important;
+    opacity: 1 !important;
+}

@@ -1,0 +1,91 @@
+2026-06-10T10:54:54.007Z - Cannot insert the value NULL into column 'StartOn', table 'Jobpost.recruit.CandidateStatusHistory'; column does not allow nulls. INSERT fails.
+RequestError: Cannot insert the value NULL into column 'StartOn', table 'Jobpost.recruit.CandidateStatusHistory'; column does not allow nulls. INSERT fails.
+    at handleError (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\mssql\lib\tedious\request.js:384:15)
+    at Connection.emit (node:events:518:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\tedious\lib\connection.js:970:18)
+    at RequestTokenHandler.onErrorMessage (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\tedious\lib\token\handler.js:284:21)
+    at Readable.<anonymous> (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\tedious\lib\token\token-stream-parser.js:19:33)
+    at Readable.emit (node:events:518:28)
+    at Readable.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushObjectMode (node:internal/streams/readable:538:3)
+    at Readable.push (node:internal/streams/readable:393:5)
+    at nextAsync (node:internal/streams/from:194:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2026-06-10T11:01:33.158Z - Login failed for user 'your_db_user'.
+ConnectionError: Login failed for user 'your_db_user'.
+    at C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\mssql\lib\tedious\connection-pool.js:85:19
+    at Connection.onConnect (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\tedious\lib\connection.js:849:9)
+    at Object.onceWrapper (node:events:633:26)
+    at Connection.emit (node:events:518:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\tedious\lib\connection.js:970:18)
+    at C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\tedious\lib\connection.js:2369:18
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2026-06-10T11:08:31.254Z - Invalid column name 'EndOn'.
+RequestError: Invalid column name 'EndOn'.
+    at handleError (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\mssql\lib\tedious\request.js:384:15)
+    at Connection.emit (node:events:518:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\tedious\lib\connection.js:970:18)
+    at RequestTokenHandler.onErrorMessage (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\tedious\lib\token\handler.js:284:21)
+    at Readable.<anonymous> (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\tedious\lib\token\token-stream-parser.js:19:33)
+    at Readable.emit (node:events:518:28)
+    at Readable.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushObjectMode (node:internal/streams/readable:538:3)
+    at Readable.push (node:internal/streams/readable:393:5)
+    at nextAsync (node:internal/streams/from:194:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2026-06-10T11:11:33.242Z - Invalid column name 'Reason'.
+RequestError: Invalid column name 'Reason'.
+    at handleError (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\mssql\lib\tedious\request.js:384:15)
+    at Connection.emit (node:events:518:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\tedious\lib\connection.js:970:18)
+    at RequestTokenHandler.onErrorMessage (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\tedious\lib\token\handler.js:284:21)
+    at Readable.<anonymous> (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\tedious\lib\token\token-stream-parser.js:19:33)
+    at Readable.emit (node:events:518:28)
+    at Readable.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushObjectMode (node:internal/streams/readable:538:3)
+    at Readable.push (node:internal/streams/readable:393:5)
+    at nextAsync (node:internal/streams/from:194:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2026-06-10T11:20:37.845Z - Cannot insert the value NULL into column 'CandidateStatusHistoryId', table 'Jobpost.recruit.CandidateStatusHistory'; column does not allow nulls. INSERT fails.
+RequestError: Cannot insert the value NULL into column 'CandidateStatusHistoryId', table 'Jobpost.recruit.CandidateStatusHistory'; column does not allow nulls. INSERT fails.
+    at handleError (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\mssql\lib\tedious\request.js:384:15)
+    at Connection.emit (node:events:518:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\tedious\lib\connection.js:970:18)
+    at RequestTokenHandler.onErrorMessage (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\tedious\lib\token\handler.js:284:21)
+    at Readable.<anonymous> (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\tedious\lib\token\token-stream-parser.js:19:33)
+    at Readable.emit (node:events:518:28)
+    at Readable.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushObjectMode (node:internal/streams/readable:538:3)
+    at Readable.push (node:internal/streams/readable:393:5)
+    at nextAsync (node:internal/streams/from:194:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+
+2026-06-10T11:22:44.425Z - Cannot insert the value NULL into column 'CandidateStatusHistoryId', table 'Jobpost.recruit.CandidateStatusHistory'; column does not allow nulls. INSERT fails.
+RequestError: Cannot insert the value NULL into column 'CandidateStatusHistoryId', table 'Jobpost.recruit.CandidateStatusHistory'; column does not allow nulls. INSERT fails.
+    at handleError (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\mssql\lib\tedious\request.js:384:15)
+    at Connection.emit (node:events:518:28)
+    at Connection.emit (node:domain:489:12)
+    at Connection.emit (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\tedious\lib\connection.js:970:18)
+    at RequestTokenHandler.onErrorMessage (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\tedious\lib\token\handler.js:284:21)
+    at Readable.<anonymous> (C:\Users\poong\Downloads\PROPHECY_ERP\PROPHECY_ERP_LATEST-dev\BackEnd\node_modules\tedious\lib\token\token-stream-parser.js:19:33)
+    at Readable.emit (node:events:518:28)
+    at Readable.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushObjectMode (node:internal/streams/readable:538:3)
+    at Readable.push (node:internal/streams/readable:393:5)
+    at nextAsync (node:internal/streams/from:194:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+

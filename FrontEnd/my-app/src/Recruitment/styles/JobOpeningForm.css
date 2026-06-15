@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700&family=Quattrocento+Sans:wght@400;700&display=swap');
+
+/* Default Light Mode */
+:root {
+  --jobopening-primary-color:#019d88;
+  --jobopening-primary-dark: #01533e;
+  --jobopening-button-hover: #098e7e;
+  --jobopening-danger-color: #dc3545;
+  --jobopening-danger-hover: #b40617;
+  --jobopening-background-light: #ffffff;
+  --jobopening-text-dark: #333;
+  --jobopening-border-color: #087465;
+}
+
+/* Global Reset for Job Opening Page */
+.job-opening-page * {
+  animation: none !important;
+  transition: none !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    background-color: transparent !important;
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    box-shadow: 0 0 0px 1000px white inset !important;
+    transition: background-color 5000s ease-in-out 0s;}
+
+/* Job Opening Page */
+.job-opening-page {
+  font-family: 'Quattrocento Sans', sans-serif;
+  background: var(--jobopening-background-light);
+  min-height: 100vh;
+  width: 96%;
+  padding: 10px;
+}
+
+/* Container */
+.job-opening-page .job-opening-container {
+  background: #ffffff;
+  width: 100%;
+  margin-left: 70px;
+  max-width: 1200px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.job-opening-page .job-opening-header {
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.job-opening-page .job-opening-header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--jobopening-primary-dark);
+}
+
+/* Buttons */
+.job-opening-page .job-opening-page-button-container {
+  display: flex;
+  margin-top:15px;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.job-opening-page .button,
+.job-opening-page .job-opening-save-button,
+.job-opening-page .job-opening-page-cancel-button {
+  font-size: 15px;
+  /* font-weight: 600; */
+  padding: 12px 18px;
+  border-radius: 6px;
+  height: 40px;
+  
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.job-opening-page .job-opening-save-button {
+  background: linear-gradient(180deg, #019d88, #0d2e26);
+  color: white;
+  width: 180px;
+ 
+}
+
+
+
+.job-opening-page .job-opening-page-cancel-button {
+  background: #eeeded;
+  color: #7a1717;
+  font-weight: 1000;
+
+}
+
+.job-opening-page .job-opening-page-cancel-button:hover {
+  background-color: #d9d9d9;
+  font-weight: bold;
+}
+
+/* Form Section */
+.job-opening-page .job-opening-form-section {
+  margin-top: 25px;
+  padding: 20px;
+  background: var(--jobopening-background-light);
+  border-radius: 5px;
+}
+
+.job-opening-page .job-opening-form-section h3 {
+  font-size: 18px;
+  color: var(--jobopening-primary-dark);
+  border-bottom: 2px solid var(--jobopening-border-color);
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+  margin-left:2px ;
+}
+.job-opening-page .job-opening-form-section1 h3 {
+  font-size: 18px;
+  color: var(--jobopening-primary-dark);
+  border-bottom: 2px solid var(--jobopening-border-color);
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+  margin-left:15px ;
+}
+
+/* Grid Layout */
+.job-opening-page .job-opening-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr)); /* Two equal columns */
+  gap: 15px;
+}
+
+/* Labels */
+.job-opening-page label {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 2px;
+  color: var(--jobopening-primary-dark);
+}
+
+/* Input Fields */
+.job-opening-page input,
+.job-opening-page select {
+  padding: 10px;
+  border: 1px solid var(--jobopening-primary-color);
+  border-radius: 5px;
+  height: 42px;
+  width: 100%;
+  font-family: 'Maven Pro', sans-serif;
+}
+
+.job-opening-page input:focus,
+.job-opening-page select:focus {
+  border: 1px solid var(--jobopening-primary-dark);
+  outline: none;
+}
+
+/* Input with Icons */
+.job-opening-page .job-opening-input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.job-opening-page .job-opening-input-container input {
+  padding-right: 35px;
+}
+
+.job-opening-page .job-opening-input-icon {
+  position: absolute;
+  right: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--jobopening-primary-dark);
+}
+
+/* Quill Editor */
+.job-opening-page .job-opening-quill-editor {
+  margin-top: 5px;
+  background: white;
+  border: 1px solid var(--jobopening-primary-color);
+  border-radius: 5px;
+  min-height: 300px;
+  padding: 16px;
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+.job-opening-page .job-opening-quill-editor .ql-editor  {
+  min-height: 250px !important;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+/* Alerts */
+.job-opening-page .alert {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, var(--jobopening-primary-color), var(--jobopening-primary-dark));
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.job-opening-page .alert .close-btn:hover {
+  opacity: 0.7;
+}
+
+/* Dropdown */
+.job-opening-page .job-opening-page-dropdown {
+  position: relative;
+  display: inline-block;
+  padding: 0px;
+}
+
+.job-opening-page .template-button {
+  font-size: 15px;
+    font-weight: 600;
+    width: 220px;
+    padding: 12px 18px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(180deg, #019d88, #0d2e26);
+    color: white;
+    margin-right: 270px;
+}
+
+.job-opening-page .job-opening-page-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 250px;
+  background: white;
+  border: 1px solid var(--jobopening-border-color);
+  max-height: 200px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.job-opening-page .job-opening-page-dropdown-menu button {
+  width: 100%;
+  padding: 8px 12px;
+  text-align: left;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.job-opening-page .job-opening-page-dropdown-menu button:hover {
+  background: #f0f0f0;
+}
+
+/* No Results */
+.job-opening-page .no-results {
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--jobopening-text-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .job-opening-page .job-opening-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .job-opening-page .job-opening-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .job-opening-page .job-opening-page-button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .job-opening-page .job-opening-page-dropdown-menu {
+    width: 100%;
+  }
+}

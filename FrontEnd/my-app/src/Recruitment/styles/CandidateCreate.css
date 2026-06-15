@@ -1,0 +1,75 @@
+/* Candidate Open Container */
+.candidate-open-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f3f4f6; /* Light gray background */
+}
+
+/* Candidate Button Container */
+.candidate-open-container .button-container {
+  display: flex;
+  flex-direction: row; /* Align items in a row */
+  align-items: center;
+  gap: 20px; /* Space between buttons */
+}
+
+/* General Button Styling */
+.candidate-open-container .candidate-button {
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  width: 250px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+/* Create Candidate Button */
+.candidate-open-container .create-candidate {
+  background: linear-gradient(180deg, #019d88, #0d2e26);
+  color: white;
+  border-color: #009688;
+}
+
+.candidate-open-container .create-candidate:hover {
+background: linear-gradient(180deg, #019d88, #0d2e26);
+  transform: scale(1.05);
+}
+
+/* Import Candidate Button */
+.candidate-open-container .import-candidate {
+  background: linear-gradient(180deg, #019d88, #0d2e26);
+  color: white;
+  border-color: #26a69a;
+}
+
+.candidate-open-container .import-candidate:hover {
+  background: linear-gradient(135deg, #26a69a, #004d40);
+  transform: scale(1.05);
+}
+
+/* Import Label */
+.candidate-open-container .import-label {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  padding: 14px 28px;
+  border-radius: 12px;
+}
+
+/* Hide File Input */
+.candidate-open-container .hidden-input {
+  display: none;
+}

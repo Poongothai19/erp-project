@@ -1,0 +1,104 @@
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.dropdown-container {
+  position: relative;
+  width: 100%;
+}
+
+.dropdown-button {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #019d88;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: -20px;
+  height: 40px;
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.search-container {
+  padding: 8px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.recruiter-list {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.user-item:hover {
+  background-color: #f8f9fa;
+}
+
+.user-item.selected {
+  background-color: #e9ecef;
+}
+
+.user-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: 500;
+}
+
+.user-email {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.no-results {
+  padding: 15px;
+  text-align: center;
+  color: #6c757d;
+}

@@ -1,0 +1,960 @@
+/* ApplicantsTable.css - Fixed Alignment */
+
+/* Main Table Wrapper */
+.applicants-table-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Error Banner */
+.applicants-error-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background-color: #fee8e6;
+  border: 1px solid #fdaca5;
+  border-radius: 6px;
+  color: #c41c00;
+  font-size: 14px;
+  animation: slideDown 0.3s ease;
+}
+
+.applicants-error-icon {
+  flex-shrink: 0;
+  color: #dc2626;
+}
+
+/* Filters Section */
+.applicants-filters-section {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Search Box */
+.applicants-search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #f9f9f9;
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 250px;
+}
+
+.applicants-search-box:focus-within {
+  border-color: #5b5fc7;
+  background: white;
+  box-shadow: 0 2px 8px rgba(91, 95, 199, 0.1);
+}
+
+.applicants-search-icon {
+  color: #999;
+  flex-shrink: 0;
+}
+
+.applicants-search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  font-family: inherit;
+}
+
+.applicants-search-input::placeholder {
+  color: #999;
+}
+
+/* Filter Box */
+.applicants-filter-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #f9f9f9;
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 250px;
+}
+
+.applicants-filter-box:focus-within {
+  border-color: #5b5fc7;
+  background: white;
+  box-shadow: 0 2px 8px rgba(91, 95, 199, 0.1);
+}
+
+.applicants-filter-icon {
+  color: #999;
+  flex-shrink: 0;
+}
+
+.applicants-filter-select {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Table Container */
+.applicants-table-container {
+  overflow-x: auto;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  background: white;
+  width: 100%;
+}
+
+/* Table */
+.applicants-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+/* Table Head */
+.applicants-table-head {
+  background: linear-gradient(90deg, #f5f5f5 0%, #f5f5f5 100%);
+}
+
+/* Header Row */
+.applicants-header-row {
+  background: linear-gradient(90deg, #f5f5f5 0%, #f5f5f5 100%);
+}
+
+/* Header Cell */
+.applicants-header-cell {
+  padding: 16px;
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #e0e0e0;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+}
+
+/* Table Body */
+.applicants-table-body {
+  background: white;
+}
+
+/* Body Row */
+.applicants-body-row {
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.applicants-body-row:hover {
+  background-color: #f9f9f9;
+}
+
+.applicants-body-row:last-child {
+  border-bottom: none;
+}
+
+/* Body Cell */
+.applicants-body-cell {
+  padding: 16px;
+  color: #333;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+/* Email Link */
+.applicants-email-link {
+  color: #038a77;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.applicants-email-link:hover {
+  color: #026655;
+  text-decoration: underline;
+}
+
+/* Phone Link */
+.applicants-phone-link {
+  color: #038a77;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.applicants-phone-link:hover {
+  color: #026655;
+  text-decoration: underline;
+}
+
+/* Position Badge */
+.applicants-position-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #038a77 0%, #038a77 100%);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Actions Cell */
+.applicants-actions-cell {
+  text-align: center;
+}
+
+.applicants-actions-group {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Action Button Base */
+.applicants-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.applicants-action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Download Button */
+.applicants-download-btn {
+  background: #e8f5f3;
+  color: #038a77;
+}
+
+.applicants-download-btn:hover:not(:disabled) {
+  background: #038a77;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(3, 138, 119, 0.3);
+}
+
+.applicants-download-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Delete Button */
+.applicants-delete-btn {
+  background: #fee8e6;
+  color: #dc2626;
+}
+
+.applicants-delete-btn:hover:not(:disabled) {
+  background: #dc2626;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.applicants-delete-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.applicants-action-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* No Results */
+.applicants-no-results-row {
+  background: white;
+}
+
+.applicants-no-results-cell {
+  text-align: center;
+  color: #999;
+  padding: 40px 16px;
+  font-style: italic;
+  border: none;
+}
+
+/* Table Footer */
+.applicants-table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  font-size: 13px;
+  color: #666;
+  font-weight: 500;
+}
+
+.applicants-footer-text {
+  margin: 0;
+}
+
+/* Delete Modal */
+.applicants-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.applicants-modal-content {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.applicants-modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 12px 0;
+}
+
+.applicants-modal-message {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 24px 0;
+  line-height: 1.5;
+}
+
+.applicants-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.applicants-modal-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.applicants-modal-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.applicants-modal-cancel {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.applicants-modal-cancel:hover:not(:disabled) {
+  background: #e0e0e0;
+}
+
+.applicants-modal-delete {
+  background: #dc2626;
+  color: white;
+}
+
+.applicants-modal-delete:hover:not(:disabled) {
+  background: #b91c1c;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .applicants-filters-section {
+    flex-direction: column;
+  }
+
+  .applicants-search-box,
+  .applicants-filter-box {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .applicants-filters-section {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .applicants-search-box,
+  .applicants-filter-box {
+    min-width: 100%;
+    padding: 10px 12px;
+  }
+
+  .applicants-data-table {
+    font-size: 12px;
+  }
+
+  .applicants-header-cell {
+    padding: 12px 8px;
+    font-size: 11px;
+  }
+
+  .applicants-body-cell {
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+
+  .applicants-action-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .applicants-action-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .applicants-position-badge {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  .applicants-table-footer {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .applicants-search-box,
+  .applicants-filter-box {
+    min-width: 100%;
+  }
+
+  .applicants-table-container {
+    border-radius: 4px;
+  }
+
+  .applicants-header-cell {
+    padding: 10px 6px;
+    font-size: 10px;
+  }
+
+  .applicants-body-cell {
+    padding: 10px 6px;
+    font-size: 12px;
+  }
+
+  .applicants-action-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .applicants-actions-group {
+    gap: 6px;
+  }
+}
+
+/* Add these styles to your ApplicantsTable.css file */
+
+/* Badge styles for new columns */
+.applicants-visa-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #e8f4f8;
+  color: #0288a8;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.applicants-employment-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #e8f4f8;
+  color: #0288a8;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Responsive table for smaller screens */
+@media (max-width: 1400px) {
+  .applicants-data-table {
+    font-size: 13px;
+  }
+
+  .applicants-header-cell,
+  .applicants-body-cell {
+    padding: 12px 8px;
+  }
+
+  .applicants-visa-badge,
+  .applicants-employment-badge {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+
+/* Horizontal scroll for very small screens */
+@media (max-width: 1000px) {
+  .applicants-table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .applicants-data-table {
+    min-width: 1200px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .applicants-filters-section {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .applicants-search-box,
+  .applicants-filter-box {
+    width: 100%;
+  }
+
+  .applicants-header-cell,
+  .applicants-body-cell {
+    padding: 10px 6px;
+    font-size: 12px;
+  }
+
+  .applicants-visa-badge,
+  .applicants-employment-badge {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  .applicants-action-btn {
+    padding: 6px;
+  }
+
+  .applicants-action-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+
+
+/* ============================================
+   RESUME SCORE STYLING - COMPACT VERSION
+   ============================================ */
+
+/* Score Badge and Container */
+.applicants-score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.applicants-score-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.applicants-score-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+}
+
+.applicants-score-details-link {
+  font-size: 11px;
+  color: #17a2b8;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.applicants-score-details-link:hover {
+  color: #0c5460;
+}
+
+/* Score Button */
+.applicants-score-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #038a77 0%, #038a77 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.applicants-score-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 234, 210, 0.4);
+}
+
+.applicants-score-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   MODAL STYLING - COMPACT & CENTERED
+   ============================================ */
+
+/* Modal Overlay */
+.applicants-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+/* Modal Content - COMPACT SIZE */
+.applicants-modal-content {
+  background-color: white;
+  border-radius: 12px;
+  padding: 28px;
+  max-width: 480px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal Title */
+.applicants-modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  color: #333;
+  text-align: center;
+}
+
+/* Modal Message */
+.applicants-modal-message {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 18px 0;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Score Details Container */
+.applicants-score-details {
+  width: 100%;
+}
+
+/* Score Header */
+.applicants-score-header {
+  text-align: center;
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+/* Large Score Display */
+.applicants-large-score {
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+/* Score Summary */
+.applicants-score-summary {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Score Sections */
+.applicants-score-section {
+  margin-bottom: 18px;
+}
+
+.applicants-score-section h4 {
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Skills List */
+.applicants-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Skill Badge */
+.applicants-skill-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.applicants-skill-matched {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.applicants-skill-missing {
+  background-color: #fee2e2;
+  color: #7f1d1d;
+  border: 1px solid #fecaca;
+}
+
+/* Empty Skills Message */
+.applicants-empty-skills {
+  font-size: 12px;
+  color: #999;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Job Description Textarea */
+.applicants-job-desc-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  resize: vertical;
+  margin-bottom: 18px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+  line-height: 1.5;
+}
+
+.applicants-job-desc-textarea:focus {
+  outline: none;
+  border-color: #038a77;
+  box-shadow: 0 0 0 3px rgba(3, 138, 119, 0.1);
+}
+
+.applicants-job-desc-textarea:disabled {
+  background-color: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* Modal Actions */
+.applicants-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Modal Buttons */
+.applicants-modal-btn {
+  padding: 9px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.applicants-modal-cancel {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #e0e0e0;
+}
+
+.applicants-modal-cancel:hover:not(:disabled) {
+  background-color: #e0e0e0;
+  border-color: #d0d0d0;
+}
+
+.applicants-modal-delete {
+  background: linear-gradient(135deg, #038a77 0%, #038a77 100%);
+  color: white;
+}
+
+.applicants-modal-delete:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 234, 205, 0.4);
+}
+
+.applicants-modal-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1200px) {
+  .applicants-score-badge {
+    width: 45px;
+    height: 45px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .applicants-modal-content {
+    max-width: 90%;
+    padding: 20px;
+  }
+
+  .applicants-score-container {
+    gap: 4px;
+  }
+
+  .applicants-score-badge {
+    width: 40px;
+    height: 40px;
+    font-size: 11px;
+  }
+
+  .applicants-modal-title {
+    font-size: 16px;
+  }
+
+  .applicants-large-score {
+    font-size: 48px;
+  }
+
+  .applicants-skill-badge {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .applicants-modal-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .applicants-modal-btn {
+    width: 100%;
+  }
+}
+
+.applicants-submit-resume-btn {
+  background-color: #1a6f66ff;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.applicants-submit-resume-btn:hover:not(:disabled) {
+  background-color: #145c54;
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(26, 111, 102, 0.3);
+}
+
+.applicants-submit-resume-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.applicants-submit-resume-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.applicants-submit-resume-btn .applicants-action-icon {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2;
+}

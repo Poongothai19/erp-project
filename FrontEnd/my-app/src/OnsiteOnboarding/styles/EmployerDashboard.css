@@ -1,0 +1,518 @@
+/* EmployerDashboard.css - Match CandidateOnboarding.css style */
+
+/* ===== Container Styles ===== */
+.employer-portal-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f8fafc;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.employer-portal-main {
+  flex: 1;
+  margin-left: 200px;
+  padding: 20px;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+/* ===== Sidebar Styles ===== */
+.employer-portal-sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #019d88 0%, #017a6a 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.employer-portal-sidebar-header {
+  padding: 24px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.employer-portal-sidebar-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+.employer-portal-sidebar-header p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.9;
+  word-break: break-word;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.employer-portal-sidebar-nav {
+  flex: 1;
+  padding: 20px 0;
+}
+
+.employer-portal-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 20px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.employer-portal-nav-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.employer-portal-nav-active {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-left: 4px solid white;
+}
+
+.employer-portal-sidebar-footer {
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.employer-portal-logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 15px;
+}
+
+.employer-portal-logout-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ===== Mobile Menu Button ===== */
+.employer-portal-mobile-menu-btn {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001;
+  background: #019d88;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Dashboard Styles ===== */
+.employer-portal-dashboard {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.employer-portal-welcome-title {
+  margin: 0 0 30px 0;
+  color: #1a3c34;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.employer-portal-section-title {
+  margin: 0 0 20px 0;
+  color: #2d4a43;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.employer-portal-submission-success,
+.employer-portal-submission-pending {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.employer-portal-submission-success {
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.employer-portal-submission-pending {
+  background: #fff3cd;
+  border: 1px solid #ffeeba;
+}
+
+.employer-portal-submission-success svg {
+  color: #28a745;
+  flex-shrink: 0;
+}
+
+.employer-portal-submission-pending svg {
+  color: #ffc107;
+  flex-shrink: 0;
+}
+
+.employer-portal-submission-title {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.employer-portal-submission-success .employer-portal-submission-title {
+  color: #155724;
+}
+
+.employer-portal-submission-pending .employer-portal-submission-title {
+  color: #856404;
+}
+
+.employer-portal-submission-text {
+  margin: 0;
+  font-size: 14px;
+}
+
+.employer-portal-submission-success .employer-portal-submission-text {
+  color: #155724;
+}
+
+.employer-portal-submission-pending .employer-portal-submission-text {
+  color: #856404;
+}
+
+.employer-portal-submission-large {
+  padding: 40px;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.employer-portal-submission-heading {
+  margin: 16px 0 8px 0;
+  color: #155724;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.employer-portal-submission-message {
+  margin: 0;
+  color: #155724;
+  font-size: 16px;
+}
+
+.employer-portal-profile-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid #e1f5eb;
+  margin-top: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.employer-portal-detail-row {
+  display: flex;
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.employer-portal-detail-row:last-child {
+  border-bottom: none;
+}
+
+.employer-portal-detail-label {
+  width: 150px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.employer-portal-detail-value {
+  flex: 1;
+  color: #1e293b;
+}
+
+/* ===== Form Styles ===== */
+.employer-portal-onboarding-form {
+  /* max-width: 900px; */
+  margin: 0 auto;
+}
+
+.employer-portal-form-header {
+  margin-bottom: 10px;
+}
+
+.employer-portal-form-title {
+  /* margin: 0 0 10px 0; */
+  color: #1a3c34;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.employer-portal-form-subtitle {
+  margin: 0;
+  color: #6c757d;
+  font-size: 16px;
+}
+
+.employer-portal-form {
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  border: 1px solid #e1f5eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* .employer-portal-form-section {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e9ecef;
+} */
+
+.employer-portal-form-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.employer-portal-section-heading {
+  margin: 0 0 5px 0;
+  color: #1d8c70;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.employer-portal-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  /* margin-bottom: 15px; */
+}
+
+.employer-portal-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 7px;
+}
+
+.employer-portal-form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #495057;
+}
+
+.employer-portal-form-group .required {
+  color: #ef4444;
+  margin-left: 2px;
+}
+
+.employer-portal-form-group input,
+.employer-portal-form-group textarea {
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #495057;
+  transition: all 0.3s;
+  width: 100%;
+  background-color: white;
+  font-family: inherit;
+}
+
+.employer-portal-form-group input:focus,
+.employer-portal-form-group textarea:focus {
+  outline: none;
+  border-color: #1d8c70;
+  box-shadow: 0 0 0 3px rgba(29, 140, 112, 0.1);
+}
+
+.employer-portal-form-group input.employer-portal-form-error,
+.employer-portal-form-group textarea.employer-portal-form-error {
+  border-color: #dc3545;
+}
+
+.employer-portal-error-text {
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.employer-portal-success-message {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+  padding: 15px 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.employer-portal-form-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.employer-portal-submit-btn {
+  background: linear-gradient(135deg, #1d8c70 0%, #2db69c 100%);
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.employer-portal-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(29, 140, 112, 0.3);
+}
+
+.employer-portal-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ===== Loading and Error States ===== */
+.employer-portal-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 20px;
+  background: #f8fafc;
+  padding: 20px;
+  text-align: center;
+}
+
+.employer-portal-loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #1d8c70;
+  border-radius: 50%;
+  animation: employer-portal-spin 1s linear infinite;
+}
+
+@keyframes employer-portal-spin {
+  to { transform: rotate(360deg); }
+}
+
+.employer-portal-loading-text {
+  color: #64748b;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 1024px) {
+  .employer-portal-main {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .employer-portal-sidebar {
+    transform: translateX(-100%);
+  }
+  
+  .employer-portal-sidebar.employer-portal-sidebar-open {
+    transform: translateX(0);
+  }
+  
+  .employer-portal-main {
+    margin-left: 0;
+    padding: 20px;
+  }
+  
+  .employer-portal-mobile-menu-btn {
+    display: block;
+  }
+  
+  .employer-portal-form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .employer-portal-form-actions {
+    justify-content: center;
+  }
+  
+  .employer-portal-submit-btn {
+    width: 100%;
+  }
+  
+  .employer-portal-welcome-title {
+    font-size: 24px;
+    margin-top: 50px;
+  }
+  
+  .employer-portal-detail-row {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .employer-portal-detail-label {
+    width: auto;
+  }
+  
+  .employer-portal-profile-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .employer-portal-main {
+    padding: 15px;
+  }
+  
+  .employer-portal-form {
+    padding: 20px;
+  }
+  
+  .employer-portal-form-title {
+    font-size: 24px;
+  }
+  
+  .employer-portal-section-heading {
+    font-size: 16px;
+  }
+  
+  .employer-portal-submission-success,
+  .employer-portal-submission-pending {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+}

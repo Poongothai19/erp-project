@@ -1,0 +1,254 @@
+/* ── Parse Flow Modals ── */
+.pf-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: pf-fadeIn 0.2s ease;
+}
+
+@keyframes pf-fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.pf-modal {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  animation: pf-popIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes pf-popIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ── Confirm Model ── */
+.pf-confirm-modal {
+  width: 400px;
+  padding: 30px;
+  align-items: center;
+  text-align: center;
+}
+
+.pf-icon-container {
+  margin-bottom: 20px;
+}
+
+.pf-orange-circle {
+  width: 70px;
+  height: 70px;
+  border: 4px solid #f97316;
+  border-radius: 50%;
+  color: #f97316;
+  font-size: 36px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.pf-title {
+  font-size: 22px;
+  font-weight: 500;
+  color: #333;
+  margin: 0 0 10px;
+}
+
+.pf-desc {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 24px;
+}
+
+.pf-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.pf-btn {
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.pf-btn-no {
+  background: #f1f5f9;
+  color: #475569;
+}
+.pf-btn-no:hover {
+  background: #e2e8f0;
+}
+
+.pf-btn-yes {
+  background: #3b82f6;
+  color: #fff;
+}
+.pf-btn-yes:hover {
+  background: #2563eb;
+}
+
+
+/* ── Loading Modal ── */
+.pf-loading-modal {
+  width: 450px;
+  padding: 40px;
+  align-items: center;
+  text-align: center;
+}
+
+.pf-loading-title {
+  font-size: 20px;
+  font-weight: 400;
+  color: #3b82f6;
+  margin: 0 0 30px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.pf-spinner-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.pf-spinner {
+  position: absolute;
+  inset: 0;
+  border: 4px solid #fce7f3;
+  border-top-color: #3b82f6;
+  border-left-color: #ec4899;
+  border-radius: 50%;
+  animation: pf-spin 1s linear infinite;
+}
+
+@keyframes pf-spin {
+  to { transform: rotate(360deg); }
+}
+
+.pf-doc-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pf-doc-icon svg {
+  width: 34px;
+  height: 34px;
+}
+
+
+/* ── Duplicate Modal ── */
+.pf-duplicate-modal {
+  width: 580px;
+  overflow: hidden;
+}
+
+.pf-dup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.pf-dup-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.pf-close-icon {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.pf-dup-body {
+  padding: 20px;
+}
+
+.pf-warning-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1f2937;
+  margin-bottom: 24px;
+}
+
+.pf-dup-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.pf-detail-row {
+  display: flex;
+  font-size: 13px;
+}
+
+.pf-detail-label {
+  width: 130px;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.pf-detail-value {
+  color: #4b5563;
+}
+.pf-blue-link {
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.pf-dup-options {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pf-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #4b5563;
+  cursor: pointer;
+}
+
+.pf-radio-label input {
+  accent-color: #3b82f6;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.pf-dup-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafb;
+}

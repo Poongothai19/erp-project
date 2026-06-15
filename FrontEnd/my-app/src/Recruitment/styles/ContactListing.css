@@ -1,0 +1,208 @@
+/* Container setup */
+.contact-page-container {
+    display: flex;
+    height: 100vh;
+    position: relative;
+    background-color: #f8f9fa;
+    overflow: auto;
+  }
+  
+  .contact-page-container.contact-sidebar-open .contact-content {
+   
+    transition: margin-left 0.3s ease;
+  }
+  
+
+  
+  /* Sidebar */
+  .filter-sidebar {
+
+    top: 0;
+    left: 100px;
+    width: 250px;
+    height: 100%;
+    background-color: #ffffff;
+    border-right: 1px solid #ddd;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    
+    transition: left 0.3s ease;
+  }
+  
+  .filter-sidebar.active {
+    left: 0;
+  }
+  
+  /* Content area */
+  .contact-content {
+    flex-grow: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+    overflow-y: auto;
+  }
+  
+  /* Header section */
+  .contact-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  /* Filter button */
+  .contact-filter-sidebar-btn {
+    background: linear-gradient(180deg, #019d88, #0d2e26);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  .contact-filter-sidebar-btn:hover {
+    background-color: linear-gradient(180deg, #019d88, #0d2e26);
+  }
+  
+  /* Search input */
+  .contact-search-container1 {
+    position: relative;
+    margin-top: 10px;
+  }
+  
+  .contact-search-input1 {
+    padding: 8px 34px 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 250px;
+    font-size: 14px;
+  }
+  
+  .contact-search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+  }
+  
+  /* Contact tools */
+  .contact-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  #contact-page-listings table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+  }
+  
+  #contact-page-listings thead th {
+    background: linear-gradient(180deg, #019d88, #0d2e26);
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    color: white;
+  }
+  
+  #contact-page-listings thead th:hover {
+    background: #01473e;
+  }
+  
+  #contact-page-listings th,
+  #contact-page-listings td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #contact-page-listings tbody tr:hover {
+    background: #f9f9f9;
+  }
+  
+  .left-contact-align,
+  .right-contact-align {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Buttons */
+  .contact-delete-selected-btn,
+  .contact-add-btn,
+  .contact-import-btn {
+    background: linear-gradient(180deg, #019d88, #0d2e26);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  .contact-delete-selected-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .contact-delete-selected-btn:hover:not(:disabled),
+  .contact-add-btn:hover,
+  .contact-import-btn:hover {
+    background-color: #218838;
+  }
+  
+  .contact-import-btn {
+    background-color: #17a2b8;
+  }
+  
+  .contact-import-btn:hover {
+    background-color: #138496;
+  }
+  
+  /* Pagination */
+  .pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .contact-page-container.contact-sidebar-open .contact-content {
+      margin-left: 0;
+    }
+  
+    .filter-sidebar {
+      width: 100%;
+    }
+  
+    .contact-search-input1 {
+      width: 100%;
+    }
+  
+    .contact-content {
+      padding: 12px;
+    }
+  
+    .contact-toolbar {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .contact-header-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  

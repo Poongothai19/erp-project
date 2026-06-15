@@ -1,0 +1,47 @@
+/* RowsPerPageSelector.css */
+
+.rows-selector-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.rows-selector-label {
+  color: #333;
+}
+
+.rows-selector-dropdown {
+  min-width: 100px;
+}
+
+/* React-Select Overrides */
+.custom-react-select__control {
+  border-radius: 6px;
+  border-color: #ccc;
+  font-size: 12px;
+  min-height: 36px;
+  cursor: pointer;
+}
+
+.custom-react-select__control--is-focused {
+  border-color: #087f5b;
+  box-shadow: 0 0 0 1px #087f5b;
+}
+
+.custom-react-select__option {
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.custom-react-select__option--is-focused {
+  background-color: #087f5b;
+  color: #fff;
+}
+
+.custom-react-select__option--is-selected {
+  background-color: #065f46;
+  color: #fff;
+}

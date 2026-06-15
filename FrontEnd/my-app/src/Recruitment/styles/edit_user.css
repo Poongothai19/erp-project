@@ -1,0 +1,74 @@
+.edit-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .edit-user-form {
+    background-color: white;
+    width: 600px;
+    max-height: 80vh; /* Limit the modal height */
+    overflow-y: auto; /* Add vertical scrollbar */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .edit-input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .edit-input-group label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  
+  .edit-input-group input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .edit-input-group input:read-only {
+    background-color: #f1f1f1;
+    color: gray;
+  }
+  
+  .edit-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .edit-cancel-btn {
+    background: #eeeded;
+    color: #7a1717;
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .edit-save-btn {
+    background: linear-gradient(180deg, #019d88, #0d2e26);
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .edit-required {
+    color: red;
+  }
+  
